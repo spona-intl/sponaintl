@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPONA Intl. | Resources</title>
+    <style>
+        :root { --bg-main: #f8fafc; --bg-card: #ffffff; --border-color: #cbd5e1; --text-primary: #0f172a; --text-secondary: #475569; --accent-emerald: #059669; --accent-indigo: #4f46e5; --light-blue: #f0fdfa; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-main); color: var(--text-primary); line-height: 1.6; }
+        nav { position: sticky; top: 0; background-color: rgba(255, 255, 255, 0.95); border-bottom: 1px solid var(--border-color); padding: 15px 20px; z-index: 1000; backdrop-filter: blur(8px); }
+        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-weight: 800; font-size: 1.2rem; color: var(--accent-indigo); text-decoration: none; }
+        .nav-right-block { display: flex; align-items: center; gap: 25px; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.95rem; }
+        .nav-links a.active, .nav-links a:hover { color: var(--accent-indigo); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+        h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; }
+        p { color: var(--text-secondary); margin-bottom: 16px; font-size: 1.05rem; }
+        .search-container { margin-bottom: 30px; }
+        .search-bar { width: 100%; padding: 14px 20px; font-size: 1rem; border: 2px solid var(--border-color); border-radius: 8px; outline: none; background-color: var(--bg-card); }
+        .search-bar:focus { border-color: var(--accent-indigo); }
+        .resource-list { list-style: none; }
+        .resource-card { background-color: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 8px; }
+        .resource-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
+        .resource-link { font-weight: 600; color: var(--accent-indigo); text-decoration: none; font-size: 1.1rem; }
+        .resource-link:hover { text-decoration: underline; }
+        .badge { font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; background-color: var(--light-blue); color: var(--accent-emerald); border: 1px solid rgba(5, 150, 105, 0.2); }
+        .uid-container { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+        .uid-token { font-family: monospace; font-size: 0.8rem; color: var(--text-secondary); background-color: #f1f5f9; padding: 2px 8px; border-radius: 4px; border: 1px solid #e2e8f0; }
+        .no-results { display: none; text-align: center; padding: 30px; color: var(--text-secondary); font-style: italic; }
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.9rem; margin-top: 60px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SPONA Intl.</a>
+            <div class="nav-right-block">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resources.html" class="active">Resources</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Resources & Mini-Projects</h2>
+        <p>Browse or query our complete registry of student-led review entries, research models, poster sets, animations, and translated documents.</p>
+        <div class="search-container">
+            <input type="text" id="resourceSearch" class="search-bar" placeholder="Search resources by topic, role title, or student UID (e.g., SI-CN-RA)...">
+        </div>
+        <div id="noResultsMessage" class="no-results">No resources match your search query terms.</div>
+        <ul class="resource-list" id="resourceRegistry">
+            <li class="resource-card" data-search="neuroplasticity adolescents research summary review paper ra research analyst si-cn-ra-100245 si-us-ra-105991">
+                <div class="resource-top">
+                    <a href="#" class="resource-link">"Neuroplasticity in Adolescents" Research Summary</a>
+                    <span class="badge">RA (Research Analyst)</span>
+                </div>
+                <p>A comprehensive tracking analysis detailing cortical reorganizations inside the secondary student demographic profile.</p>
+                <div class="uid-container"><span class="uid-token">SI-CN-RA-100245</span><span class="uid-token">SI-US-RA-105991</span></div>
+            </li>
+            <li class="resource-card" data-search="synaptic pruning summary spanish translation edition mt multilingual translator si-mx-mt-500147">
+                <div class="resource-top">
+                    <a href="#" class="resource-link">"Synaptic Pruning Summary" (Spanish Translation)</a>
+                    <span class="badge">MT (Multilingual Translator)</span>
+                </div>
+                <p>A localized linguistic conversion of developmental synaptic elimination guidelines for cross-border global chapters.</p>
+                <div class="uid-container"><span class="uid-token">SI-MX-MT-500147</span></div>
+            </li>
+            <li class="resource-card" data-search="action potentials visualized animations media animator ma dd digital designer si-gb-ma-300412 si-ca-dd-200951">
+                <div class="resource-top">
+                    <a href="#" class="resource-link">"Action Potentials Visualized" Video Animation</a>
+                    <span class="badge">MA (Media Animator)</span>
+                </div>
+                <p>A sequence of high-fidelity vector rendering models depicting cellular membrane voltage changes during neural firings.</p>
+                <div class="uid-container"><span class="uid-token">SI-GB-MA-300412</span><span class="uid-token">SI-CA-DD-200951</span></div>
+            </li>
+        </ul>
+        <footer><p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p></footer>
+    </div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element'); }
+    </script>
+    <script type="text/javascript" src="//://google.com"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById('resourceSearch');
+            const resourceCards = document.querySelectorAll('#resourceRegistry .resource-card');
+            const noResultsMessage = document.getElementById('noResultsMessage');
+            if(searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    const query = e.target.value.toLowerCase().trim();
+                    let matchingItemsCount = 0;
+                    resourceCards.forEach(card => {
+                        const searchMetadata = card.getAttribute('data-search');
+                        if (searchMetadata.includes(query)) {
+                            card.style.display = 'flex';
+                            matchingItemsCount++;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    if (matchingItemsCount === 0 && query !== '') { noResultsMessage.style.display = 'block'; }
+                    else { noResultsMessage.style.display = 'none'; }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
