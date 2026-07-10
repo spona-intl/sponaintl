@@ -70,15 +70,16 @@
     </script>
     <script type="text/javascript" src="//://google.com"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const today = new Date();
-            const month = today.getMonth();
-            const applicationMonths =;
-            if (applicationMonths.includes(month)) {
-                const formSection = document.getElementById("dynamic-cohort-section");
-                if(formSection) formSection.style.display = "block";
-            }
-        });
+document.addEventListener("DOMContentLoaded", function() {
+    const today = new Date();
+    const month = today.getMonth();
+    const applicationMonths =; 
+    if (applicationMonths.includes(month)) {
+        const formSection = document.getElementById("dynamic-cohort-section");
+        if (formSection) formSection.style.display = "block";
+    }
+});
+
     </script>
 </body>
 </html>
