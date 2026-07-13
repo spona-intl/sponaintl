@@ -52,6 +52,8 @@
         .role-card strong { font-size: 0.9rem; color: #ffffff; display: block; font-weight: 600; }
         
         footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.85rem; margin-top: 80px; }
+        footer a { color: var(--accent-indigo); text-decoration: none; font-weight: 600; transition: color 0.2s ease; }
+        footer a:hover { color: #ffffff; text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -87,7 +89,7 @@
                     <p style="color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 35px; max-width: 850px; line-height: 1.7;">Join an elite, global cohort of 20 ambitious students. Selected applicants will be grouped into international, cross-functional teams of 5. Together, these teams will collaborate over 6 months to publish peer-led neuroscience, psychology, psychiatry, medicine, surgery, and AI projects.</p>
                     <div class="logistics-grid">
                         <div class="metric-card"><strong>⏳ Programme Duration</strong><span>6 Months</span></div>
-                        <div class="metric-card"><strong>⏰ Weekly Commitment</strong><span>2–4 Hours / Week</span></div>
+                        <div class="metric-card"><strong>⏰ Weekly Commitment</strong><span>2–4 Hours / Week (Asynchronous)</span></div>
                         <div class="metric-card"><strong>👥 Team Structure</strong><span>4 Teams of 5 Students</span></div>
                         <div class="metric-card"><strong>💎 Tuition Fee</strong><span style="color: var(--accent-emerald);">100% Free</span></div>
                     </div>
@@ -100,10 +102,10 @@
                         <div class="role-card"><span>💬</span><strong>Multilingual Translator</strong></div>
                     </div>
                 </div>
-                <iframe id="google-form-iframe" src="https://google.com" width="100%" height="950" frameborder="0" style="background-color: #ffffff; display: block; border: none;">Loading...</iframe>
+                <iframe id="google-form-iframe" src="https://google.com" width="100%" height="950" frameborder="0" style="background-color: #ffffff; display: block; border: none;">Loading application module...</iframe>
             </div>
         </div>
-        <footer><p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p></footer>
+        <footer><p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association. Need help? <a href="mailto:spona.intl.info@gmail.com">Email our team</a>.</p></footer>
     </div>
     <script type="text/javascript">
         function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element'); }
@@ -111,10 +113,4 @@
     <script type="text/javascript" src="https://google.com"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const today = new Date(); const month = today.getMonth(); const applicationMonths =;
-            const formSection = document.getElementById("dynamic-cohort-section");
-            if (formSection) { formSection.style.display = applicationMonths.includes(month) ? "block" : "none"; }
-        });
-    </script>
-</body>
-</html>
+            const today = new Date(); const month = today.getMonth(); const applicationMonths =; 
