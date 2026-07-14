@@ -2,14 +2,12 @@
     --bg-main: #fcfcfd;
     --bg-card: #ffffff;
     --border-subtle: #e2e8f0;
-    
-    /* 🖤 Upgraded High-End Charcoal & Luxury Onyx Palette */
     --text-display: #0f172a;
     --text-muted: #64748b;
-    --brand-dark: #1e293b;            /* Premium slate gray-charcoal replace for logos */
-    --brand-accent-bg: #f8fafc;      /* Replaces old bluish-purple light badge tints */
-    --brand-accent-text: #334155;    /* Sophisticated subtle tint for active indicators */
-    --brand-accent-border: #cbd5e1;  /* High-end clean border outline values */
+    --brand-dark: #1e293b;
+    --brand-accent-bg: #f8fafc;
+    --brand-accent-text: #334155;
+    --brand-accent-border: #cbd5e1;
 }
 
 * {
@@ -54,7 +52,6 @@ nav {
     letter-spacing: -0.5px;
 }
 
-/* 🖤 UPDATED: Logo sub-brand color transitioned from bluish-purple to deep charcoal gray */
 .nav-logo span {
     color: var(--brand-dark);
     font-weight: 500;
@@ -67,7 +64,7 @@ nav {
     align-items: center;
 }
 
-/* Pill-Style Luxury Links */
+/* Pill-Style Links */
 .nav-links a {
     text-decoration: none;
     color: #475569;
@@ -84,14 +81,13 @@ nav {
     background-color: #f8fafc;
 }
 
-/* 🖤 UPDATED: Active tab pill background color swapped from blue-purple to refined soft gray tint */
 .nav-links a.active {
     color: #0f172a;
     background-color: var(--brand-accent-bg);
     border-color: var(--brand-accent-border);
 }
 
-/* 🏛️ Main Canvas Area */
+/* 🏛️ Layout Framing */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -121,7 +117,6 @@ nav {
     margin: 0 auto;
 }
 
-/* 🖤 UPDATED: Upper Registry Badge Header Pill Layout Tinted Neutral Gray */
 .status-pill {
     display: inline-block;
     font-size: 0.72rem;
@@ -161,7 +156,7 @@ nav {
     background-color: #334155;
 }
 
-/* 🎞️ Horizontal Scroller Section */
+/* 🎞️ Horizontal Scrolling Display Grid */
 .publication-runway-section {
     margin-top: 80px;
 }
@@ -255,7 +250,6 @@ nav {
     padding-top: 12px;
 }
 
-/* 📑 Lists and Grid Architectures */
 .editorial-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -281,7 +275,6 @@ nav {
     font-size: 0.95rem;
 }
 
-/* Search Bar Input Frame */
 .search-bar {
     width: 100%;
     padding: 16px 20px;
@@ -297,7 +290,6 @@ nav {
     border-color: var(--text-display);
 }
 
-/* 🖤 UPDATED: Card List Nodes Borders swap on selection */
 .list-item-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
@@ -330,7 +322,6 @@ nav {
     line-height: 1.5;
 }
 
-/* 👣 Footer Line Setup */
 footer {
     text-align: center;
     padding: 60px 0 40px 0;
