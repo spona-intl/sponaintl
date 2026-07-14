@@ -6,9 +6,13 @@
     <title>SPONA Intl. | Resources</title>
     <style>
         :root {
-            --bg-main: #0b0f19; --bg-card: #131b2e; --border-color: #1e293b;
-            --text-primary: #f8fafc; --text-secondary: #94a3b8;
-            --accent-emerald: #10b981; --accent-indigo: #6366f1; 
+            --bg-main: #0b0f19; 
+            --bg-card: #131b2e; 
+            --border-color: #1e293b;
+            --text-primary: #f8fafc; 
+            --text-secondary: #94a3b8;
+            --accent-emerald: #10b981; 
+            --accent-indigo: #6366f1; 
             --accent-glow: rgba(99, 102, 241, 0.15);
             --light-blue: rgba(16, 185, 129, 0.1);
         }
@@ -39,7 +43,6 @@
         
         .resource-list { list-style: none; }
         
-        /* Clickable Form Wrapper Link Elements */
         .resource-card { 
             display: block;
             background-color: var(--bg-card); 
@@ -65,4 +68,95 @@
         .no-results { display: none; text-align: center; padding: 50px 20px; color: var(--text-secondary); font-style: italic; border: 1px dashed var(--border-color); border-radius: 16px; background-color: rgba(19, 27, 46, 0.2); }
         
         footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.85rem; margin-top: 80px; }
-        footer a { color: var(--accent-
+        footer a { color: var(--accent-indigo); text-decoration: none; font-weight: 600; transition: color 0.2s ease; }
+        footer a:hover { color: #ffffff; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SPONA<span>Intl.</span></a>
+            <div class="nav-right-block">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resources.html" class="active">Resources</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Resources & Mini-Projects</h2>
+        <p>Browse or query our complete registry of student-led review entries, research models, poster sets, animations, and translated documents.</p>
+        
+        <div class="search-container">
+            <input type="text" id="resourceSearch" class="search-bar" placeholder="Search resources by topic, role title, or student UID (e.g., SI-CN-RA)...">
+        </div>
+        
+        <div id="noResultsMessage" class="no-results">No resources match your search query terms.</div>
+        
+        <div class="resource-list" id="resourceRegistry">
+            <a href="#" class="resource-card" data-search="neuroplasticity adolescents research summary review paper ra research analyst si-cn-ra-100245 si-us-ra-105991">
+                <div class="resource-top">
+                    <span class="resource-link">"Neuroplasticity in Adolescents" Research Summary</span>
+                    <span class="badge">RA (Research Analyst)</span>
+                </div>
+                <p>A comprehensive tracking analysis detailing cortical reorganizations inside the secondary student demographic profile.</p>
+                <div class="uid-container">
+                    <span class="uid-token">SI-CN-RA-100245</span>
+                    <span class="uid-token">SI-US-RA-105991</span>
+                </div>
+            </a>
+            
+            <a href="#" class="resource-card" data-search="synaptic pruning summary spanish translation edition mt multilingual translator si-mx-mt-500147">
+                <div class="resource-top">
+                    <span class="resource-link">"Synaptic Pruning Summary" (Spanish Translation)</span>
+                    <span class="badge">MT (Multilingual Translator)</span>
+                </div>
+                <p>A localized linguistic conversion of developmental synaptic elimination guidelines for cross-border global chapters.</p>
+                <div class="uid-container">
+                    <span class="uid-token">SI-MX-MT-500147</span>
+                </div>
+            </a>
+            
+            <a href="#" class="resource-card" data-search="action potentials visualized animations media animator ma dd digital designer si-gb-ma-300412 si-ca-dd-200951">
+                <div class="resource-top">
+                    <span class="resource-link">"Action Potentials Visualized" Video Animation</span>
+                    <span class="badge">MA (Media Animator)</span>
+                </div>
+                <p>A sequence of high-fidelity vector rendering models depicting cellular membrane voltage changes during neural firings.</p>
+                <div class="uid-container">
+                    <span class="uid-token">SI-GB-MA-300412</span>
+                    <span class="uid-token">SI-CA-DD-200951</span>
+                </div>
+            </a>
+        </div>
+        
+        <footer>
+            <p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association. Need help? <a href="mailto:spona.intl.info@gmail.com">Email our team</a>.</p>
+        </footer>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', 
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://google.com"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById('resourceSearch');
+            const resourceCards = document.querySelectorAll('#resourceRegistry .resource-card');
+            const noResultsMessage = document.getElementById('noResultsMessage');
+            
+            if(searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    const query = e.target.value.toLowerCase().trim();
