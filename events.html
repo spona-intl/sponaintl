@@ -4,339 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPONA Intl. | Events</title>
-    <style>
-        :root {
-            --bg-main: #f8fafc;
-            --bg-card: #ffffff;
-            --border-color: #e2e8f0;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --accent: #4f46e5;
-            --accent-light: #e0e7ff;
-            --accent-glow: rgba(79, 70, 229, 0.04);
-            --emerald: #059669;
-            --emerald-light: #d1fae5;
-            --rose: #dc2626;
-            --rose-light: #fee2e2;
-        }
-
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
-        }
-
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            background-color: var(--bg-main); 
-            color: var(--text-primary); 
-            line-height: 1.7; 
-            background-image: radial-gradient(circle at 90% 10%, rgba(79, 70, 229, 0.03), transparent 600px);
-            background-attachment: fixed;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Navigation Header */
-        nav { 
-            position: sticky; 
-            top: 0; 
-            background-color: rgba(248, 250, 252, 0.85); 
-            border-bottom: 1px solid var(--border-color); 
-            padding: 22px 24px; 
-            z-index: 1000; 
-            backdrop-filter: blur(20px); 
-        }
-
-        .nav-container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            flex-wrap: wrap; 
-            gap: 20px; 
-        }
-
-        .nav-logo { 
-            font-weight: 800; 
-            font-size: 1.25rem; 
-            color: var(--text-primary); 
-            text-decoration: none; 
-            letter-spacing: -0.5px; 
-            text-transform: uppercase;
-        }
-
-        .nav-logo span { 
-            color: var(--accent); 
-            font-weight: 400;
-        }
-
-        .nav-right-block { 
-            display: flex; 
-            align-items: center; 
-            gap: 30px; 
-        }
-
-        .nav-links { 
-            display: flex; 
-            gap: 6px; 
-            list-style: none; 
-        }
-
-        .nav-links a { 
-            text-decoration: none; 
-            color: var(--text-secondary); 
-            font-weight: 500; 
-            font-size: 0.9rem; 
-            padding: 10px 18px; 
-            border-radius: 30px; 
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
-        }
-
-        .nav-links a:hover { 
-            color: var(--text-primary); 
-            background-color: rgba(15, 23, 42, 0.04); 
-        }
-
-        .nav-links a.active { 
-            color: var(--accent); 
-            background-color: var(--accent-light); 
-            font-weight: 600;
-        }
-
-        /* Container Layout */
-        .container { 
-            max-width: 1000px; 
-            margin: 0 auto; 
-            padding: 80px 24px; 
-        }
-
-        .page-header {
-            margin-bottom: 60px;
-        }
-
-        h2 { 
-            font-size: 2.5rem; 
-            font-weight: 800; 
-            margin-bottom: 16px; 
-            color: var(--text-primary); 
-            letter-spacing: -0.8px; 
-            line-height: 1.2;
-        }
-
-        .subtitle { 
-            color: var(--text-secondary); 
-            font-size: 1.15rem; 
-            max-width: 700px;
-        }
-
-        /* Section Headings */
-        .section-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: -0.4px;
-            margin-bottom: 24px;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* High-End Event & Cohort Grid Layout */
-        .events-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-            margin-bottom: 60px;
-        }
-
-        .event-card { 
-            background-color: var(--bg-card); 
-            border: 1px solid var(--border-color); 
-            padding: 40px; 
-            border-radius: 24px; 
-            text-decoration: none;
-            color: inherit;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            align-items: center;
-            gap: 30px;
-            box-shadow: 0 4px 30px rgba(15, 23, 42, 0.015); 
-            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
-        }
-
-        .event-card:hover { 
-            transform: translateY(-4px); 
-            border-color: var(--accent); 
-            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.05); 
-        }
-
-        .event-info {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .badge { 
-            align-self: flex-start;
-            font-size: 0.72rem; 
-            font-weight: 700; 
-            padding: 6px 16px; 
-            border-radius: 30px; 
-            text-transform: uppercase;
-            letter-spacing: 0.8px; 
-        }
-
-        .badge-upcoming {
-            background-color: var(--accent-light); 
-            color: var(--accent); 
-        }
-
-        .badge-active {
-            background-color: var(--emerald-light);
-            color: var(--emerald);
-        }
-
-        .badge-locked {
-            background-color: var(--rose-light);
-            color: var(--rose);
-        }
-
-        .event-title { 
-            font-size: 1.5rem; 
-            font-weight: 700; 
-            color: var(--text-primary); 
-            letter-spacing: -0.4px;
-            transition: color 0.3s ease;
-        }
-
-        .event-card:hover .event-title { 
-            color: var(--accent); 
-        }
-
-        .event-meta {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .event-meta strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .event-desc { 
-            color: var(--text-secondary); 
-            font-size: 1rem; 
-            line-height: 1.6;
-            max-width: 750px;
-        }
-
-        /* Elegant High-End Action Trigger Button */
-        .action-trigger {
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            background-color: var(--bg-main);
-            border: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--text-primary);
-            transition: all 0.3s ease;
-        }
-
-        .event-card:hover .action-trigger {
-            background-color: var(--accent);
-            border-color: var(--accent);
-            color: #ffffff;
-            transform: translateX(4px);
-        }
-
-        /* Locked Card Variations override hover logic safely */
-        .event-card.locked {
-            cursor: not-allowed;
-            opacity: 0.8;
-        }
-        .event-card.locked:hover {
-            transform: none;
-            border-color: var(--border-color);
-            box-shadow: 0 4px 30px rgba(15, 23, 42, 0.015);
-        }
-        .event-card.locked:hover .event-title {
-            color: var(--text-primary);
-        }
-        .event-card.locked:hover .action-trigger {
-            background-color: var(--bg-main);
-            border-color: var(--border-color);
-            color: var(--text-primary);
-            transform: none;
-        }
-
-        /* Footer System */
-        footer { 
-            text-align: center; 
-            padding: 50px 0; 
-            border-top: 1px solid var(--border-color); 
-            color: var(--text-secondary); 
-            font-size: 0.85rem; 
-            margin-top: 100px; 
-        }
-
-        footer a { 
-            color: var(--accent); 
-            text-decoration: none; 
-            font-weight: 600; 
-            transition: color 0.2s ease; 
-        }
-
-        footer a:hover { 
-            text-decoration: underline; 
-        }
-
-        /* Responsive Breakpoints */
-        @media(max-width: 768px) {
-            .event-card {
-                grid-template-columns: 1fr;
-                padding: 30px;
-                gap: 20px;
-            }
-            .action-trigger {
-                display: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav>
         <div class="nav-container">
             <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
-            <div class="nav-right-block">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="events.html" class="active">Events</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div id="google_translate_element"></div>
-            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
-    <div class="container">
-        <header class="page-header">
-            <h2>Academic Assemblies & Schedules</h2>
-            <p class="subtitle">Track active international student admission cohorts, research workshops, and global scientific symposium timelines below.</p>
-        </header>
+    <main class="container" style="max-width: 850px;">
+        <div class="hero-wrapper" style="text-align: left;">
+            <div class="status-pill">Symposia Schedules</div>
+            <h1 style="text-align: left; margin: 0 0 16px 0;">Global Academic Assemblies</h1>
+            <p style="text-align: left;">Track global onboarding cycles, open science symposia, and upcoming peer-led review workshops.</p>
+        </div>
 
-        <!-- Dynamic Cohort Programme Section -->
-        <h3 class="section-title">🧬 Global Cohort Applications</h3>
-        <div class="events-grid">
-            <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="event-card" id="cohortCard">
-                <div class="event-info">
-                    <span class="badge" id="cohortBadge">Processing Timeline...</span>
+        <div class="list-item-card" style="border-left: 3px solid var(--brand-indigo);">
+            <div style="margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-indigo)">UPCOMING SEMINAR</div>
+            <h3>Global Youth Neuroscience Seminar 2026</h3>
+            <p style="margin-bottom: 16px;"><strong>Timeline Schedule:</strong> October 14, 2026 @ 15:00 UTC</p>
+            <p style="margin-bottom: 24px;">An international digital assembly where core research analysts and team branches share dynamic updates regarding ongoing collaborative modules.</p>
+            <a href="https://zoom.us" target="_blank" rel="noopener noreferrer" class="action-btn" style="padding: 10px 24px; font-size: 0.85rem;">Access Digital Assembly</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p>
+    </footer>
+
+</body>
+</html>
