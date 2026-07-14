@@ -6,40 +6,156 @@
     <title>SPONA Intl. | Events</title>
     <style>
         :root {
-            --bg-main: #0b0f19; --bg-card: #131b2e; --border-color: #1e293b;
-            --text-primary: #f8fafc; --text-secondary: #94a3b8;
-            --accent-emerald: #10b981; --accent-indigo: #6366f1; 
+            --bg-main: #0b0f19; 
+            --bg-card: #131b2e; 
+            --border-color: #1e293b;
+            --text-primary: #f8fafc; 
+            --text-secondary: #94a3b8;
+            --accent-emerald: #10b981; 
+            --accent-indigo: #6366f1; 
             --accent-glow: rgba(99, 102, 241, 0.15);
             --light-blue: rgba(16, 185, 129, 0.1);
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            background-color: var(--bg-main); color: var(--text-primary); line-height: 1.6; 
+            background-color: var(--bg-main); 
+            color: var(--text-primary); 
+            line-height: 1.6; 
             background-image: radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.05), transparent 450px);
             background-attachment: fixed;
         }
-        nav { position: sticky; top: 0; background-color: rgba(11, 15, 25, 0.85); border-bottom: 1px solid var(--border-color); padding: 18px 20px; z-index: 1000; backdrop-filter: blur(12px); }
-        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-        .nav-logo { font-weight: 800; font-size: 1.3rem; color: #ffffff; text-decoration: none; letter-spacing: -0.5px; }
-        .nav-logo span { color: var(--accent-indigo); }
-        .nav-right-block { display: flex; align-items: center; gap: 25px; }
-        .nav-links { display: flex; gap: 8px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.9rem; padding: 8px 16px; border-radius: 8px; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
-        .nav-links a.active, .nav-links a:hover { color: #ffffff; background-color: rgba(255, 255, 255, 0.05); }
-        .nav-links a.active { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
-        
-        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
-        h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; color: #ffffff; letter-spacing: -0.5px; }
-        p { color: var(--text-secondary); margin-bottom: 30px; font-size: 1.05rem; }
-        
-        .card { background-color: var(--bg-card); border: 1px solid var(--border-color); padding: 30px; border-radius: 20px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .card:hover { transform: translateY(-4px); border-color: var(--accent-indigo); box-shadow: 0 12px 30px var(--accent-glow); }
-        h3 { font-size: 1.4rem; font-weight: 700; color: #ffffff; margin-bottom: 12px; }
-        .card p { color: var(--text-secondary); margin-bottom: 12px; font-size: 0.95rem; }
-        .card p strong { color: #ffffff; }
-        .badge { font-size: 0.75rem; font-weight: 700; padding: 6px 14px; border-radius: 20px; background-color: var(--light-blue); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.2); letter-spacing: 0.5px; }
-        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.85rem; margin-top: 80px; }
+        nav { 
+            position: sticky; 
+            top: 0; 
+            background-color: rgba(11, 15, 25, 0.85); 
+            border-bottom: 1px solid var(--border-color); 
+            padding: 18px 20px; 
+            z-index: 1000; 
+            backdrop-filter: blur(12px); 
+        }
+        .nav-container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 15px; 
+        }
+        .nav-logo { 
+            font-weight: 800; 
+            font-size: 1.3rem; 
+            color: #ffffff; 
+            text-decoration: none; 
+            letter-spacing: -0.5px; 
+        }
+        .nav-logo span { 
+            color: var(--accent-indigo); 
+        }
+        .nav-right-block { 
+            display: flex; 
+            align-items: center; 
+            gap: 25px; 
+        }
+        .nav-links { 
+            display: flex; 
+            gap: 8px; 
+            list-style: none; 
+        }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text-secondary); 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            padding: 8px 16px; 
+            border-radius: 8px; 
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .nav-links a.active, .nav-links a:hover { 
+            color: #ffffff; 
+            background-color: rgba(255, 255, 255, 0.05); 
+        }
+        .nav-links a.active { 
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); 
+        }
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 60px 20px; 
+        }
+        h2 { 
+            font-size: 2.2rem; 
+            font-weight: 800; 
+            margin-bottom: 12px; 
+            color: #ffffff; 
+            letter-spacing: -0.5px; 
+        }
+        .subtitle { 
+            color: var(--text-secondary); 
+            margin-bottom: 30px; 
+            font-size: 1.05rem; 
+        }
+        .card { 
+            background-color: var(--bg-card); 
+            border: 1px solid var(--border-color); 
+            padding: 30px; 
+            border-radius: 20px; 
+            margin-bottom: 24px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .card:hover { 
+            transform: translateY(-4px); 
+            border-color: var(--accent-indigo); 
+            box-shadow: 0 12px 30px var(--accent-glow); 
+        }
+        h3 { 
+            font-size: 1.4rem; 
+            font-weight: 700; 
+            color: #ffffff; 
+            margin-bottom: 12px; 
+        }
+        .card p { 
+            color: var(--text-secondary); 
+            margin-bottom: 12px; 
+            font-size: 0.95rem; 
+        }
+        .card p strong { 
+            color: #ffffff; 
+        }
+        .badge { 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            padding: 6px 14px; 
+            border-radius: 20px; 
+            background-color: var(--light-blue); 
+            color: var(--accent-emerald); 
+            border: 1px solid rgba(16, 185, 129, 0.2); 
+            letter-spacing: 0.5px; 
+        }
+        footer { 
+            text-align: center; 
+            padding: 40px 0; 
+            border-top: 1px solid var(--border-color); 
+            color: var(--text-secondary); 
+            font-size: 0.85rem; 
+            margin-top: 80px; 
+        }
+        footer a { 
+            color: var(--accent-indigo); 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: color 0.2s ease; 
+        }
+        footer a:hover { 
+            color: #ffffff; 
+            text-decoration: underline; 
+        }
     </style>
 </head>
 <body>
@@ -58,19 +174,32 @@
             </div>
         </div>
     </nav>
+
     <div class="container">
         <h2>Events & Academic Schedule</h2>
-        <p>Track global onboarding cycles, open science symposia, and local secondary school study chapter timelines below.</p>
+        <p class="subtitle">Track global onboarding cycles, open science symposia, and local secondary school study chapter timelines below.</p>
+        
         <div class="card" style="border-left: 4px solid var(--accent-indigo);">
             <span class="badge" style="margin-bottom: 16px; display: inline-block;">Upcoming Event</span>
             <h3>Global Youth Neuroscience Seminar 2026</h3>
             <p><strong>Timeline Schedule:</strong> October 14, 2026 @ 15:00 UTC</p>
             <p>An international digital assembly where core analysts and team branches share updates regarding current research modules.</p>
         </div>
-        <footer><p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p></footer>
     </div>
+
+    <footer>
+        <p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association. Need help? <a href="mailto:spona.intl.info@gmail.com">Email our team</a>.</p>
+    </footer>
+
+    <!-- Google Translate Integration -->
     <script type="text/javascript">
-        function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element'); }
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', 
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
     </script>
     <script type="text/javascript" src="https://google.com"></script>
 </body>
