@@ -12,11 +12,11 @@
         .logistics-card strong { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 6px; }
         .logistics-card span { font-size: 1.1rem; font-weight: 500; color: var(--text-display); }
         
-        /* Interactive State Containers */
+        /* State Blocks Visibility */
         #application-active-window, #application-closed-window { display: none; }
         
         .countdown-banner { background: #f8fafc; border: 1px solid var(--border-subtle); padding: 40px; text-align: center; margin-top: 30px; }
-        .form-frame-holder { width: 100%; height: 950px; border: none; margin-top: 30px; background: #ffffff; }
+        .form-frame-holder { width: 100%; height: 1000px; border: none; margin-top: 30px; background: #ffffff; }
     </style>
 </head>
 <body>
@@ -47,20 +47,20 @@
             <div class="logistics-card"><strong>🎯 Next Active Term</strong><span>August 01 – August 25</span></div>
         </section>
 
-        <!-- 🔓 STATE 1: Renders automatically when current date hits the August window -->
+        <!-- 🔓 STATE 1: Active Registration Module Frame -->
         <div id="application-active-window">
             <h2 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.8rem; font-weight: 400; margin-bottom: 12px;">Active Registration Module</h2>
-            <p>Complete the international entry form below. Applications for this cycle will close strictly on **August 25th at 23:59 UTC**.</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Complete the international entry form below. Applications for this cycle will close strictly on <strong>August 25th at 23:59 UTC</strong>.</p>
             
-            <!-- 🔗 FIXED: Official embedded live form interface target link -->
+            <!-- Live Embedded Form Window Frame -->
             <iframe class="form-frame-holder" src="https://google.com">Loading application platform...</iframe>
         </div>
 
-        <!-- 🔒 STATE 2: Renders automatically outside of the open window -->
+        <!-- 🔒 STATE 2: Closed Application Fallback Screen -->
         <div id="application-closed-window" class="countdown-banner">
             <div style="font-size: 2.5rem; margin-bottom: 16px;">⏳</div>
-            <h3 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 8px;">Admissions Term Currently Paused</h3>
-            <p style="color: var(--text-muted); max-width: 550px; margin: 0 auto 20px auto;">This global research initiative runs on bi-annual development setups. Registrations launch natively every August. Enter your email via our standard dashboard channels to monitor incoming registry updates.</p>
+            <h3 style="font-family: 'Times New Roman', Georgia, serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 8px;">Admissions Term Paused</h3>
+            <p style="color: var(--text-muted); max-width: 550px; margin: 0 auto 20px auto;">This global research initiative runs on bi-annual development setups. Registrations launch natively every August. Enter your email via our standard channels to monitor incoming updates.</p>
             <a href="contact.html" class="action-btn" style="font-size: 0.85rem; padding: 10px 24px;">Get Notified Via Email</a>
         </div>
     </main>
@@ -69,19 +69,22 @@
         <p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p>
     </footer>
 
-    <!-- ⚡ SYSTEM TIME DEPLOYMENT RULES ENGINE -->
+    <!-- ⚡ REFIND AUTOMATION RULES ENGINE WITH TESTING BYPASS -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // 🛠️ SET TO true TO FORCE THE FORM TO OPEN FOR TESTING RIGHT NOW
+            // CHANGE TO false WHEN YOU WANT IT TO RUN AUTOMATICALLY ON AUGUST CLOCK METRICS
+            const TESTING_MODE = true; 
+
             const today = new Date();
-            const currentMonth = today.getUTCMonth(); // January = 0, August = 7
+            const currentMonth = today.getUTCMonth(); 
             const currentDate = today.getUTCDate();
             
             const statusPill = document.getElementById('live-status-pill');
             const activeWindow = document.getElementById('application-active-window');
             const closedWindow = document.getElementById('application-closed-window');
 
-            // 🚦 AUTOMATION RULE: Open strictly if month is August (7) and day is equal to or less than 25
-            if (currentMonth === 7 && currentDate <= 25) {
+            if (TESTING_MODE || (currentMonth === 7 && currentDate <= 25)) {
                 statusPill.textContent = "Admissions Active";
                 statusPill.style.background = "#f0fdf4";
                 statusPill.style.color = "#16a34a";
