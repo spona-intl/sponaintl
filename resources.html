@@ -6,73 +6,307 @@
     <title>SPONA Intl. | Resources</title>
     <style>
         :root {
-            --bg-main: #0b0f19; 
-            --bg-card: #131b2e; 
-            --border-color: #1e293b;
-            --text-primary: #f8fafc; 
-            --text-secondary: #94a3b8;
-            --accent-emerald: #10b981; 
-            --accent-indigo: #6366f1; 
-            --accent-glow: rgba(99, 102, 241, 0.15);
-            --light-blue: rgba(16, 185, 129, 0.1);
+            --bg-main: #f8fafc;
+            --bg-glass: rgba(255, 255, 255, 0.75);
+            --bg-card: #ffffff;
+            --border-color: rgba(148, 163, 184, 0.12);
+            --border-hover: rgba(99, 102, 241, 0.25);
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --accent-indigo: #4f46e5;
+            --accent-indigo-light: rgba(79, 70, 229, 0.08);
+            --accent-emerald: #059669;
+            --accent-emerald-light: rgba(5, 150, 105, 0.08);
+            --shadow-sm: 0 4px 20px rgba(148, 163, 184, 0.05);
+            --shadow-md: 0 16px 40px rgba(79, 70, 229, 0.06);
+            --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            background-color: var(--bg-main); color: var(--text-primary); line-height: 1.6; 
-            background-image: radial-gradient(circle at top right, rgba(99, 102, 241, 0.08), transparent 450px);
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 100% 0%, rgba(79, 70, 229, 0.04), transparent 600px),
+                radial-gradient(circle at 0% 100%, rgba(5, 150, 105, 0.03), transparent 600px);
             background-attachment: fixed;
+            -webkit-font-smoothing: antialiased;
         }
-        nav { position: sticky; top: 0; background-color: rgba(11, 15, 25, 0.85); border-bottom: 1px solid var(--border-color); padding: 18px 20px; z-index: 1000; backdrop-filter: blur(12px); }
-        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-        .nav-logo { font-weight: 800; font-size: 1.3rem; color: #ffffff; text-decoration: none; letter-spacing: -0.5px; }
-        .nav-logo span { color: var(--accent-indigo); }
-        .nav-right-block { display: flex; align-items: center; gap: 25px; }
-        .nav-links { display: flex; gap: 8px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.9rem; padding: 8px 16px; border-radius: 8px; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
-        .nav-links a.active, .nav-links a:hover { color: #ffffff; background-color: rgba(255, 255, 255, 0.05); }
-        .nav-links a.active { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
-        
-        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
-        h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; color: #ffffff; letter-spacing: -0.5px; }
-        p { color: var(--text-secondary); margin-bottom: 30px; font-size: 1.05rem; }
-        
-        .search-container { margin-bottom: 35px; }
-        .search-bar { width: 100%; padding: 16px 22px; font-size: 1rem; color: #ffffff; border: 1px solid var(--border-color); border-radius: 12px; outline: none; background-color: rgba(11, 15, 25, 0.5); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
-        .search-bar:focus { border-color: var(--accent-indigo); background-color: var(--bg-card); box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15); }
-        
-        .resource-list { list-style: none; }
-        
-        .resource-card { 
-            display: block;
-            background-color: var(--bg-card); 
-            border: 1px solid var(--border-color); 
-            padding: 26px; 
-            border-radius: 16px; 
-            margin-bottom: 20px; 
+
+        /* High-End Glassmorphic Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-glass);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .nav-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--text-primary);
             text-decoration: none;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
         }
-        .resource-card:hover { transform: translateY(-4px); border-color: var(--accent-indigo); box-shadow: 0 12px 30px var(--accent-glow); }
-        
-        .resource-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; flex-wrap: wrap; margin-bottom: 10px; }
-        .resource-link { font-weight: 700; color: #ffffff; font-size: 1.2rem; transition: color 0.2s ease; }
-        .resource-card:hover .resource-link { color: var(--accent-indigo); text-decoration: underline; }
-        .resource-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 12px; line-height: 1.6; }
-        
-        .badge { font-size: 0.75rem; font-weight: 700; padding: 6px 14px; border-radius: 20px; background-color: var(--light-blue); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.2); letter-spacing: 0.5px; }
-        
-        .uid-container { display: flex; flex-wrap: wrap; gap: 8px; }
-        .uid-token { font-family: monospace; font-size: 0.8rem; color: var(--text-secondary); background-color: rgba(11, 15, 25, 0.4); padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border-color); }
-        .no-results { display: none; text-align: center; padding: 50px 20px; color: var(--text-secondary); font-style: italic; border: 1px dashed var(--border-color); border-radius: 16px; background-color: rgba(19, 27, 46, 0.2); }
-        
-        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.85rem; margin-top: 80px; }
-        footer a { color: var(--accent-indigo); text-decoration: none; font-weight: 600; transition: color 0.2s ease; }
-        footer a:hover { color: #ffffff; text-decoration: underline; }
+
+        .nav-logo span {
+            color: var(--accent-indigo);
+            font-weight: 400;
+            margin-left: 2px;
+        }
+
+        .nav-right-block {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.88rem;
+            padding: 10px 18px;
+            border-radius: 12px;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background-color: rgba(148, 163, 184, 0.08);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-indigo);
+            background-color: var(--accent-indigo-light);
+        }
+
+        /* Main Container layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Search Architecture */
+        .search-container {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 18px 24px;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            outline: none;
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: inherit;
+        }
+
+        .search-bar:focus {
+            border-color: var(--accent-indigo);
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .search-bar::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+
+        /* Resource Grid & Registry Cards */
+        .resource-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .resource-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 32px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            box-shadow: var(--shadow-sm);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-md);
+        }
+
+        .resource-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .resource-link {
+            font-weight: 750;
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            letter-spacing: -0.3px;
+            transition: color 0.2s ease;
+        }
+
+        .resource-card:hover .resource-link {
+            color: var(--accent-indigo);
+        }
+
+        .badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background-color: var(--accent-emerald-light);
+            color: var(--accent-emerald);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .resource-card p {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        /* Token Layouts */
+        .uid-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 4px;
+            border-top: 1px solid rgba(148, 163, 184, 0.08);
+            padding-top: 16px;
+        }
+
+        .uid-token {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background-color: rgba(148, 163, 184, 0.06);
+            padding: 5px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            letter-spacing: 0.2px;
+        }
+
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 60px 24px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            border: 1px dashed var(--border-color);
+            border-radius: 20px;
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Premium Minimalist Footer */
+        footer {
+            text-align: center;
+            padding: 48px 24px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 100px;
+            background-color: #ffffff;
+        }
+
+        footer a {
+            color: var(--accent-indigo);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s ease;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Google Translate Structural Overrides */
+        #google_translate_element {
+            display: inline-block;
+        }
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: 1px solid var(--border-color) !important;
+            padding: 6px 12px !important;
+            border-radius: 10px !important;
+            font-family: inherit !important;
+            font-size: 0.82rem !important;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Sticky Navigation Block -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="nav-logo">SPONA<span>Intl.</span></a>
@@ -88,75 +322,13 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <h2>Resources & Mini-Projects</h2>
-        <p>Browse or query our complete registry of student-led review entries, research models, poster sets, animations, and translated documents.</p>
-        
-        <div class="search-container">
-            <input type="text" id="resourceSearch" class="search-bar" placeholder="Search resources by topic, role title, or student UID (e.g., SI-CN-RA)...">
-        </div>
-        
-        <div id="noResultsMessage" class="no-results">No resources match your search query terms.</div>
-        
-        <div class="resource-list" id="resourceRegistry">
-            <a href="#" class="resource-card" data-search="neuroplasticity adolescents research summary review paper ra research analyst si-cn-ra-100245 si-us-ra-105991">
-                <div class="resource-top">
-                    <span class="resource-link">"Neuroplasticity in Adolescents" Research Summary</span>
-                    <span class="badge">RA (Research Analyst)</span>
-                </div>
-                <p>A comprehensive tracking analysis detailing cortical reorganizations inside the secondary student demographic profile.</p>
-                <div class="uid-container">
-                    <span class="uid-token">SI-CN-RA-100245</span>
-                    <span class="uid-token">SI-US-RA-105991</span>
-                </div>
-            </a>
-            
-            <a href="#" class="resource-card" data-search="synaptic pruning summary spanish translation edition mt multilingual translator si-mx-mt-500147">
-                <div class="resource-top">
-                    <span class="resource-link">"Synaptic Pruning Summary" (Spanish Translation)</span>
-                    <span class="badge">MT (Multilingual Translator)</span>
-                </div>
-                <p>A localized linguistic conversion of developmental synaptic elimination guidelines for cross-border global chapters.</p>
-                <div class="uid-container">
-                    <span class="uid-token">SI-MX-MT-500147</span>
-                </div>
-            </a>
-            
-            <a href="#" class="resource-card" data-search="action potentials visualized animations media animator ma dd digital designer si-gb-ma-300412 si-ca-dd-200951">
-                <div class="resource-top">
-                    <span class="resource-link">"Action Potentials Visualized" Video Animation</span>
-                    <span class="badge">MA (Media Animator)</span>
-                </div>
-                <p>A sequence of high-fidelity vector rendering models depicting cellular membrane voltage changes during neural firings.</p>
-                <div class="uid-container">
-                    <span class="uid-token">SI-GB-MA-300412</span>
-                    <span class="uid-token">SI-CA-DD-200951</span>
-                </div>
-            </a>
-        </div>
-        
-        <footer>
-            <p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association. Need help? <a href="mailto:spona.intl.info@gmail.com">Email our team</a>.</p>
-        </footer>
-    </div>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en', 
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="https://google.com"></script>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const searchInput = document.getElementById('resourceSearch');
-            const resourceCards = document.querySelectorAll('#resourceRegistry .resource-card');
-            const noResultsMessage = document.getElementById('noResultsMessage');
-            
-            if(searchInput) {
-                searchInput.addEventListener('input', function(e) {
-                    const query = e.target.value.toLowerCase().trim();
+    <!-- Main Entry Container -->
+    <div class="container">
+        <header class="header-section">
+            <h2>Resources & Mini-Projects</h2>
+            <p class="subtitle">Browse our unified registry of peer-led review summaries, structural data models, and localized medical translations.</p>
+        </header>
+
+        <!-- Live Registry Search System -->
+        <div class="search-container">
