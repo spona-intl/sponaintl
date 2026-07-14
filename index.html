@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPONA Intl. | Architecture</title>
+    <title>SPONA Intl. | Home</title>
     <style>
         :root {
             --bg-main: #fcfcfd;
             --bg-card: #ffffff;
             --border-subtle: #e2e8f0;
             --text-display: #0f172a;
+            --text-secondary: #475569;
             --text-muted: #64748b;
-            --brand-indigo: #4f46e5;
-            --brand-indigo-light: #e0e7ff;
-            --glass-nav: rgba(252, 252, 253, 0.85);
+            --brand-indigo: #6366f1;
+            --brand-indigo-glow: rgba(99, 102, 241, 0.05);
+            --accent-emerald: #10b981;
+            --light-emerald: rgba(16, 185, 129, 0.08);
         }
 
         * {
@@ -30,177 +32,176 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 🧭 High-End Header Design */
+        /* 🧭 Clean Header Navigation */
         nav {
             position: sticky;
             top: 0;
-            background-color: var(--glass-nav);
+            background-color: rgba(252, 252, 253, 0.9);
             border-bottom: 1px solid var(--border-subtle);
-            padding: 24px 40px;
+            padding: 16px 30px;
             z-index: 1000;
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(16px);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
+        /* Upgraded Serif Brand Logo Styling */
         .nav-logo {
             font-family: "Times New Roman", Georgia, serif;
             font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--text-display);
+            font-size: 1.45rem;
+            color: #000000;
             text-decoration: none;
             letter-spacing: -0.3px;
         }
 
         .nav-logo span {
-            color: var(--brand-indigo);
-            font-weight: 400;
-            margin-left: 4px;
+            color: #4f46e5;
+            margin-left: 3px;
         }
 
+        .nav-right-block {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Kept & Optimized Original Rounded Nav Links Box Bar Layout */
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 6px;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 500;
+            color: #475569;
+            font-weight: 600;
             font-size: 0.9rem;
-            letter-spacing: 0.3px;
-            position: relative;
-            padding: 6px 0;
-            transition: color 0.2s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: all 0.2s ease-in-out;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--text-display);
+        .nav-links a.active, 
+        .nav-links a:hover {
+            color: #0f172a;
+            background-color: #f1f5f9;
+            border-color: #e2e8f0;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background-color: var(--text-display);
-            transform: scaleX(0);
-            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .nav-links a.active::after,
-        .nav-links a:hover::after {
-            transform: scaleX(1);
-        }
-
-        /* 🏛️ Editorial Hero Presentation Layout */
-        .hero-wrapper {
-            max-width: 1200px;
+        /* 🏛️ Editorial Hero Space */
+        .container {
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 100px 20px 40px 20px;
+            padding: 60px 20px;
+        }
+
+        .hero {
             text-align: center;
+            padding: 60px 20px 40px 20px;
+            margin-bottom: 20px;
         }
 
-        .hero-wrapper h1 {
+        h1 {
             font-family: "Times New Roman", Georgia, serif;
-            font-size: 3.75rem;
+            font-size: 3.4rem;
             font-weight: 400;
-            line-height: 1.15;
-            color: var(--text-display);
-            max-width: 900px;
-            margin: 0 auto 32px auto;
+            margin-bottom: 24px;
             letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--text-display);
         }
 
-        .hero-wrapper p {
+        .hero p {
             font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 650px;
+            color: var(--text-secondary);
+            max-width: 700px;
             margin: 0 auto;
-            font-weight: 400;
         }
 
-        /* 🔒 Clickable Cohort Application Layout Block */
+        /* 🔒 Premium Clickable Application Module Container */
+        .cohort-trigger-anchor {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            margin-top: 30px;
+            margin-bottom: 60px;
+        }
+
         .cohort-card {
-            max-width: 850px;
-            margin: 60px auto 40px auto;
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
-            padding: 60px 40px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.01);
+            border-radius: 16px;
+            padding: 45px 30px;
             text-align: center;
-            text-decoration: none;
-            display: block;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .cohort-card:hover {
+        .cohort-trigger-anchor:hover .cohort-card {
             transform: translateY(-4px);
-            border-color: var(--text-display);
-            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.04);
+            border-color: var(--brand-indigo);
+            box-shadow: 0 16px 36px rgba(99, 102, 241, 0.05);
         }
 
         .status-pill {
             display: inline-block;
             font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--brand-indigo);
-            background-color: var(--brand-indigo-light);
-            border: 1px solid rgba(79, 70, 229, 0.1);
+            font-weight: 700;
             padding: 6px 16px;
-            border-radius: 4px;
-            margin-bottom: 24px;
+            border-radius: 20px;
+            background-color: var(--brand-indigo-light);
+            color: #4f46e5;
+            background-color: #eef2ff;
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
         }
 
         .cohort-card h2 {
             font-family: "Times New Roman", Georgia, serif;
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 400;
-            margin-bottom: 16px;
             color: var(--text-display);
+            margin-bottom: 12px;
         }
 
         .cohort-card p {
+            color: var(--text-secondary);
             font-size: 1rem;
-            color: var(--text-muted);
-            max-width: 600px;
+            max-width: 620px;
             margin: 0 auto;
         }
 
-        /* 🎞️ Horizontal Scroll Collection Runway */
+        /* 🎞️ Horizontal Publishing Runway */
         .publication-runway-section {
-            max-width: 1200px;
-            margin: 40px auto 80px auto;
-            padding: 0 20px;
+            margin-top: 40px;
         }
 
         .section-meta-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             border-bottom: 1px solid var(--border-subtle);
-            padding-bottom: 16px;
+            padding-bottom: 14px;
         }
 
         .section-meta-header h2 {
             font-family: "Times New Roman", Georgia, serif;
-            font-size: 1.8rem;
+            font-size: 1.65rem;
             font-weight: 400;
             color: var(--text-display);
-            letter-spacing: -0.3px;
         }
 
         .scroll-indicator-text {
@@ -208,15 +209,15 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--text-muted);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .horizontal-scroll-runway {
             display: flex;
-            gap: 24px;
+            gap: 20px;
             overflow-x: auto;
             overflow-y: hidden;
-            padding: 12px 4px 32px 4px;
+            padding: 8px 4px 24px 4px;
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
@@ -230,70 +231,70 @@
         }
         .horizontal-scroll-runway::-webkit-scrollbar-thumb {
             background: var(--border-subtle);
-            border-radius: 2px;
-            transition: background 0.2s ease;
+            border-radius: 10px;
         }
         .horizontal-scroll-runway:hover::-webkit-scrollbar-thumb {
             background: var(--text-muted);
         }
 
         .scroll-item-card {
-            flex: 0 0 340px;
+            flex: 0 0 320px;
             scroll-snap-align: start;
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
-            padding: 32px 28px;
+            padding: 28px 24px;
+            border-radius: 12px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             text-decoration: none;
             color: inherit;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .scroll-item-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             border-color: var(--text-display);
-            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
         }
 
         .card-top-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .card-category-badge {
             font-size: 0.7rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             color: var(--text-muted);
         }
 
         .card-lang-badge {
             font-size: 0.75rem;
-            color: var(--brand-indigo);
-            background-color: var(--brand-indigo-light);
+            color: #4f46e5;
+            background-color: #eef2ff;
             padding: 2px 8px;
-            font-weight: 500;
+            border-radius: 4px;
+            font-weight: 600;
         }
 
         .scroll-item-card h3 {
             font-family: "Times New Roman", Georgia, serif;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 400;
             line-height: 1.3;
             color: var(--text-display);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .scroll-item-card p {
             font-size: 0.9rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             line-height: 1.5;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .card-contributor-footer {
@@ -301,27 +302,24 @@
             font-size: 0.75rem;
             color: var(--text-muted);
             border-top: 1px dashed var(--border-subtle);
-            padding-top: 14px;
+            padding-top: 12px;
             margin-top: auto;
         }
 
-        /* 🏛️ Standard Institutional Footer */
         footer {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 0;
             border-top: 1px solid var(--border-subtle);
             color: var(--text-muted);
             font-size: 0.85rem;
-            margin-top: 80px;
-            background-color: var(--bg-card);
+            margin-top: 60px;
         }
 
         footer a {
-            color: var(--brand-indigo);
+            color: #4f46e5;
             text-decoration: none;
             font-weight: 600;
         }
-
         footer a:hover {
             text-decoration: underline;
         }
@@ -329,14 +327,16 @@
 </head>
 <body>
 
-    <!-- 🧭 Clean Navigation Bar -->
+    <!-- 🧭 Navigation Header -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="nav-logo">SPONA<span>Intl.</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Hub</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="resources.html">Registry</a></li>
-                <li><a href="events.html">Symposia</a></li>
-                <li><a href="contact.html">Architects</a></li>
-            </ul>
+            <div class="nav-right-block">
+                <!-- Kept your exact nav layout & active state boxes -->
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
