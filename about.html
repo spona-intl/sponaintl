@@ -1,332 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SPONA Intl. | Resources</title>
-  <style>
-    :root {
-      --bg-main: #0b0f19;
-      --bg-card: #131b2e;
-      --border-color: #1e293b;
-      --text-primary: #f8fafc;
-      --text-secondary: #94a3b8;
-      --accent-emerald: #10b981;
-      --accent-indigo: #6366f1;
-      --accent-glow: rgba(99, 102, 241, 0.15);
-      --light-blue: rgba(16, 185, 129, 0.1);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPONA Intl. | About Us</title>
+    <style>
+        :root {
+            --bg-main: #060913; 
+            --bg-card: rgba(19, 27, 46, 0.4); 
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f8fafc; 
+            --text-secondary: #94a3b8;
+            --accent-emerald: #10b981; 
+            --accent-indigo: #6366f1; 
+            --accent-glow: rgba(99, 102, 241, 0.25);
+            --panel-glass: rgba(11, 15, 25, 0.7);
+        }
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background-color: var(--bg-main); 
+            color: var(--text-primary); 
+            line-height: 1.6; 
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.12), transparent 600px),
+                radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.06), transparent 600px);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        
+        /* Premium Floating Navigation Header */
+        nav { 
+            position: sticky; 
+            top: 0; 
+            background-color: var(--panel-glass); 
+            border-bottom: 1px solid var(--border-color); 
+            padding: 18px 20px; 
+            z-index: 1000; 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .nav-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 15px; 
+        }
+        .nav-logo { 
+            font-weight: 900; 
+            font-size: 1.4rem; 
+            color: #ffffff; 
+            text-decoration: none; 
+            letter-spacing: -0.5px; 
+        }
+        .nav-logo span { 
+            color: var(--accent-indigo); 
+            text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+        }
+        .nav-right-block { 
+            display: flex; 
+            align-items: center; 
+            gap: 25px; 
+        }
+        .nav-links { 
+            display: flex; 
+            gap: 4px; 
+            list-style: none; 
+        }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text-secondary); 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            padding: 10px 18px; 
+            border-radius: 10px; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .nav-links a.active, .nav-links a:hover { 
+            color: #ffffff; 
+            background-color: rgba(255, 255, 255, 0.06); 
+        }
+        .nav-links a.active { 
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); 
+            background-color: rgba(99, 102, 241, 0.1);
+            color: #ffffff;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        /* Container Structure */
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 80px 20px; 
+        }
+        
+        .header-section {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 70px auto;
+        }
+        .header-section .badge {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-emerald);
+            background: rgba(16, 185, 129, 0.08);
+            padding: 6px 16px;
+            border-radius: 100px;
+            border: 1px solid rgba(16, 185, 129, 0.15);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .header-section h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -1.5px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        .header-section p {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+        }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg-main);
-      color: var(--text-primary);
-      line-height: 1.6;
-      background-image: radial-gradient(circle at top right, rgba(99, 102, 241, 0.08), transparent 450px);
-      background-attachment: fixed;
-    }
+        /* Modern High-End Bento Grid Layout */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .bento-item {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .bento-item:hover {
+            transform: translateY(-6px);
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: 0 20px 40px var(--accent-glow);
+        }
+        .bento-item:hover::before {
+            opacity: 1;
+        }
+        
+        /* Grid Span Formats */
+        .span-2 { grid-column: span 2; }
+        .span-3 { grid-column: span 3; }
+        
+        /* Bento Card Typography Styling */
+        .bento-item .icon {
+            font-size: 2rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+        .bento-item h3 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+        .bento-item p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        /* Highlight Feature Content styling */
+        .stat-highlight {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: transparent;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-indigo));
+            -webkit-background-clip: text;
+            background-clip: text;
+            margin-bottom: 10px;
+            display: block;
+            letter-spacing: -2px;
+        }
 
-    nav {
-      position: sticky;
-      top: 0;
-      background-color: rgba(11, 15, 25, 0.85);
-      border-bottom: 1px solid var(--border-color);
-      padding: 18px 20px;
-      z-index: 1000;
-      backdrop-filter: blur(12px);
-    }
+        /* Footer System */
+        footer { 
+            text-align: center; 
+            padding: 50px 0; 
+            border-top: 1px solid var(--border-color); 
+            color: var(--text-secondary); 
+            font-size: 0.85rem; 
+            margin-top: 100px; 
+        }
+        footer a { 
+            color: var(--accent-indigo); 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: color 0.2s ease; 
+        }
+        footer a:hover { 
+            color: #ffffff; 
+            text-decoration: underline; 
+        }
 
-    .nav-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .nav-logo {
-      font-weight: 800;
-      font-size: 1.3rem;
-      color: #ffffff;
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-
-    .nav-logo span {
-      color: var(--accent-indigo);
-    }
-
-    .nav-right-block {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 8px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-weight: 600;
-      font-size: 0.9rem;
-      padding: 8px 16px;
-      border-radius: 8px;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .nav-links a.active, .nav-links a:hover {
-      color: #ffffff;
-      background-color: rgba(255, 255, 255, 0.05);
-    }
-
-    .nav-links a.active {
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      color: #ffffff;
-      letter-spacing: -0.5px;
-    }
-
-    p {
-      color: var(--text-secondary);
-      margin-bottom: 30px;
-      font-size: 1.05rem;
-    }
-
-    .search-container {
-      margin-bottom: 35px;
-    }
-
-    .search-bar {
-      width: 100%;
-      padding: 16px 22px;
-      font-size: 1rem;
-      color: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      outline: none;
-      background-color: rgba(11, 15, 25, 0.5);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .search-bar:focus {
-      border-color: var(--accent-indigo);
-      background-color: var(--bg-card);
-      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
-    }
-
-    .resource-list {
-      list-style: none;
-    }
-
-    .resource-card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: 26px;
-      border-radius: 16px;
-      margin-bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .resource-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent-indigo);
-      box-shadow: 0 12px 30px var(--accent-glow);
-    }
-
-    .resource-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .resource-link {
-      font-weight: 700;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 1.2rem;
-      transition: color 0.2s ease;
-    }
-
-    .resource-card:hover .resource-link {
-      color: var(--accent-indigo);
-    }
-
-    .badge {
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 20px;
-      background-color: var(--light-blue);
-      color: var(--accent-emerald);
-      border: 1px solid rgba(16, 185, 129, 0.2);
-      letter-spacing: 0.5px;
-    }
-
-    .uid-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 6px;
-    }
-
-    .uid-token {
-      font-family: monospace;
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      background-color: rgba(11, 15, 25, 0.4);
-      padding: 4px 10px;
-      border-radius: 6px;
-      border: 1px solid var(--border-color);
-    }
-
-    .no-results {
-      display: none;
-      text-align: center;
-      padding: 50px 20px;
-      color: var(--text-secondary);
-      font-style: italic;
-      border: 1px dashed var(--border-color);
-      border-radius: 16px;
-      background-color: rgba(19, 27, 46, 0.2);
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      border-top: 1px solid var(--border-color);
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      margin-top: 80px;
-    }
-  </style>
+        /* Responsive Breakpoints */
+        @media (max-width: 968px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .span-2 { grid-column: span 2; }
+        }
+        @media (max-width: 680px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .span-2, .span-3 { grid-column: span 1; }
+            .header-section h1 { font-size: 2.3rem; }
+        }
+    </style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">SPONA<span>Intl.</span></a>
-      <div class="nav-right-block">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="resources.html" class="active">Resources</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div id="google_translate_element"></div>
-      </div>
-    </div>
-  </nav>
-
-  <div class="container">
-    <h2>Resources & Mini-Projects</h2>
-    <p>Browse or query our complete registry of student-led review entries, research models, poster sets, animations, and translated documents.</p>
-
-    <div class="search-container">
-      <input type="text" id="resourceSearch" class="search-bar" placeholder="Search resources by topic, role title, or student UID (e.g., SI-CN-RA)...">
-    </div>
-
-    <div id="noResultsMessage" class="no-results">No resources match your search query terms.</div>
-
-    <ul class="resource-list" id="resourceRegistry">
-      <li class="resource-card" data-search="neuroplasticity adolescents research summary review paper ra research analyst si-cn-ra-100245 si-us-ra-105991">
-        <div class="resource-top">
-          <a href="#" class="resource-link">"Neuroplasticity in Adolescents" Research Summary</a>
-          <span class="badge">RA (Research Analyst)</span>
+    <!-- Floating Global Navigation Structure Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SPONA<span>Intl.</span></a>
+            <div class="nav-right-block">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div id="google_translate_element"></div>
+            </div>
         </div>
-        <p>A comprehensive tracking analysis detailing cortical reorganizations inside the secondary student demographic profile.</p>
-        <div class="uid-container">
-          <span class="uid-token">SI-CN-RA-100245</span>
-          <span class="uid-token">SI-US-RA-105991</span>
-        </div>
-      </li>
+    </nav>
 
-      <li class="resource-card" data-search="synaptic pruning summary spanish translation edition mt multilingual translator si-mx-mt-500147">
-        <div class="resource-top">
-          <a href="#" class="resource-link">"Synaptic Pruning Summary" (Spanish Translation)</a>
-          <span class="badge">MT (Multilingual Translator)</span>
-        </div>
-        <p>A localized linguistic conversion of developmental synaptic elimination guidelines for cross-border global chapters.</p>
-        <div class="uid-container">
-          <span class="uid-token">SI-MX-MT-500147</span>
-        </div>
-      </li>
+    <!-- Content Workspace Section -->
+    <div class="container">
+        
+        <section class="header-section">
+            <span class="badge">Our Mission Matrix</span>
+            <h1>Decoding the Human Brain, Globally.</h1>
+            <p>SPONA International scales advanced academic mentorship and peer outreach initiatives directly to brilliant secondary and early undergraduate students across international borders.</p>
+        </section>
 
-      <li class="resource-card" data-search="action potentials visualized animations media animator ma dd digital designer si-gb-ma-300412 si-ca-dd-200951">
-        <div class="resource-top">
-          <a href="#" class="resource-link">"Action Potentials Visualized" Video Animation</a>
-          <span class="badge">MA (Media Animator)</span>
-        </div>
-        <p>A sequence of high-fidelity vector rendering models depicting cellular membrane voltage changes during neural firings.</p>
-        <div class="uid-container">
-          <span class="uid-token">SI-GB-MA-300412</span>
-          <span class="uid-token">SI-CA-DD-200951</span>
-        </div>
-      </li>
-    </ul>
-
-    <footer>
-      <p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p>
-    </footer>
-  </div>
-
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en', 
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="https://google.com"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const searchInput = document.getElementById('resourceSearch');
-      const resourceCards = document.querySelectorAll('#resourceRegistry .resource-card');
-      const noResultsMessage = document.getElementById('noResultsMessage');
-
-      if (searchInput) {
-        searchInput.addEventListener('input', function(e) {
-          // Tokenize the input string into individual sub-keywords
-          const queryTokens = e.target.value.toLowerCase().trim().split(/\s+/).filter(token => token.length > 0);
-          let matchingItemsCount = 0;
-
-          resourceCards.forEach(card => {
-            const searchMetadata = (card.getAttribute('data-search') || '').toLowerCase();
+        <!-- Asymmetrical High-End Bento Box Framework Container -->
+        <main class="bento-grid">
             
-            // Check if every single token typed by the user exists somewhere inside the metadata
-            const isMatch = queryTokens.every(token => searchMetadata.includes(token));
+            <div class="bento-item span-2">
+                <span class="icon">🌍</span>
+                <h3>Radical Academic Inclusivity</h3>
+                <p>Geography should never limit intellectual discovery. SPONA connects competitive minds across multiple continents, forging functional research teams that operate completely asynchronously over a structured six-month lifecycle.</p>
+            </div>
 
-            if (isMatch) {
+            <div class="bento-item">
+                <span class="stat-highlight">100%</span>
+                <h3>Open Access</h3>
+                <p>Our curriculum modules, review frameworks, digital assets, and expert-vetted materials are completely free to read, translate, or adapt worldwide.</p>
+            </div>
+
+            <div class="bento-item">
+                <span class="icon">🧠</span>
+                <h3>Interdisciplinary Focus</h3>
+                <p>We combine core neurological science rules with cross-functional modern workflows, spanning clinical psychology, artificial intelligence modeling, psychiatry, and medical animation arts.</p>
+            </div>
+
