@@ -4,339 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPONA Intl. | Home</title>
-    <style>
-        :root {
-            --bg-main: #fcfcfd;
-            --bg-card: #ffffff;
-            --border-subtle: #e2e8f0;
-            --text-display: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #64748b;
-            --brand-indigo: #6366f1;
-            --brand-indigo-glow: rgba(99, 102, 241, 0.05);
-            --accent-emerald: #10b981;
-            --light-emerald: rgba(16, 185, 129, 0.08);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-display);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* 🧭 Clean Header Navigation */
-        nav {
-            position: sticky;
-            top: 0;
-            background-color: rgba(252, 252, 253, 0.9);
-            border-bottom: 1px solid var(--border-subtle);
-            padding: 16px 30px;
-            z-index: 1000;
-            backdrop-filter: blur(16px);
-        }
-
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        /* Upgraded Serif Brand Logo Styling */
-        .nav-logo {
-            font-family: "Times New Roman", Georgia, serif;
-            font-weight: 700;
-            font-size: 1.45rem;
-            color: #000000;
-            text-decoration: none;
-            letter-spacing: -0.3px;
-        }
-
-        .nav-logo span {
-            color: #4f46e5;
-            margin-left: 3px;
-        }
-
-        .nav-right-block {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* Kept & Optimized Original Rounded Nav Links Box Bar Layout */
-        .nav-links {
-            display: flex;
-            gap: 6px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #475569;
-            font-weight: 600;
-            font-size: 0.9rem;
-            padding: 8px 16px;
-            border-radius: 8px;
-            border: 1px solid transparent;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .nav-links a.active, 
-        .nav-links a:hover {
-            color: #0f172a;
-            background-color: #f1f5f9;
-            border-color: #e2e8f0;
-        }
-
-        /* 🏛️ Editorial Hero Space */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 60px 20px 40px 20px;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-family: "Times New Roman", Georgia, serif;
-            font-size: 3.4rem;
-            font-weight: 400;
-            margin-bottom: 24px;
-            letter-spacing: -0.5px;
-            line-height: 1.2;
-            color: var(--text-display);
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* 🔒 Premium Clickable Application Module Container */
-        .cohort-trigger-anchor {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            margin-top: 30px;
-            margin-bottom: 60px;
-        }
-
-        .cohort-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            padding: 45px 30px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .cohort-trigger-anchor:hover .cohort-card {
-            transform: translateY(-4px);
-            border-color: var(--brand-indigo);
-            box-shadow: 0 16px 36px rgba(99, 102, 241, 0.05);
-        }
-
-        .status-pill {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 6px 16px;
-            border-radius: 20px;
-            background-color: var(--brand-indigo-light);
-            color: #4f46e5;
-            background-color: #eef2ff;
-            border: 1px solid rgba(99, 102, 241, 0.15);
-            letter-spacing: 0.5px;
-            margin-bottom: 20px;
-        }
-
-        .cohort-card h2 {
-            font-family: "Times New Roman", Georgia, serif;
-            font-size: 2rem;
-            font-weight: 400;
-            color: var(--text-display);
-            margin-bottom: 12px;
-        }
-
-        .cohort-card p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            max-width: 620px;
-            margin: 0 auto;
-        }
-
-        /* 🎞️ Horizontal Publishing Runway */
-        .publication-runway-section {
-            margin-top: 40px;
-        }
-
-        .section-meta-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--border-subtle);
-            padding-bottom: 14px;
-        }
-
-        .section-meta-header h2 {
-            font-family: "Times New Roman", Georgia, serif;
-            font-size: 1.65rem;
-            font-weight: 400;
-            color: var(--text-display);
-        }
-
-        .scroll-indicator-text {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
-
-        .horizontal-scroll-runway {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            overflow-y: hidden;
-            padding: 8px 4px 24px 4px;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .horizontal-scroll-runway::-webkit-scrollbar {
-            height: 3px;
-        }
-        .horizontal-scroll-runway::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .horizontal-scroll-runway::-webkit-scrollbar-thumb {
-            background: var(--border-subtle);
-            border-radius: 10px;
-        }
-        .horizontal-scroll-runway:hover::-webkit-scrollbar-thumb {
-            background: var(--text-muted);
-        }
-
-        .scroll-item-card {
-            flex: 0 0 320px;
-            scroll-snap-align: start;
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            padding: 28px 24px;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .scroll-item-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--text-display);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
-        }
-
-        .card-top-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-        }
-
-        .card-category-badge {
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--text-muted);
-        }
-
-        .card-lang-badge {
-            font-size: 0.75rem;
-            color: #4f46e5;
-            background-color: #eef2ff;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        .scroll-item-card h3 {
-            font-family: "Times New Roman", Georgia, serif;
-            font-size: 1.25rem;
-            font-weight: 400;
-            line-height: 1.3;
-            color: var(--text-display);
-            margin-bottom: 10px;
-        }
-
-        .scroll-item-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .card-contributor-footer {
-            font-family: monospace;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            border-top: 1px dashed var(--border-subtle);
-            padding-top: 12px;
-            margin-top: auto;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid var(--border-subtle);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-top: 60px;
-        }
-
-        footer a {
-            color: #4f46e5;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 🧭 Navigation Header -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">SPONA<span>Intl.</span></a>
-            <div class="nav-right-block">
-                <!-- Kept your exact nav layout & active state boxes -->
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+            <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="hero-wrapper">
+            <h1>The Student-led Peer Outreach & Neuroscience Association</h1>
+            <p>Bridging the gap between global youth collaboration and the fine matrix of brain science research.</p>
+        </div>
+
+        <section class="editorial-card">
+            <div class="status-pill">Admissions Cycle Open</div>
+            <h2 style="font-family: 'Times New Roman', Georgia, serif; font-size: 2.2rem; font-weight: 400; margin-bottom: 16px;">The 6-Month International Cohort</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 32px auto;">
+                Our applications open strictly every 6 months for a 1-month active window. Join an elite framework of international students publishing peer-led neuroscience assets.
+            </p>
+            <a href="events.html" class="action-btn">View Admission Schedules & Deadlines</a>
+        </section>
+
+        <section class="publication-runway-section">
+            <div class="section-meta-header">
+                <h2>Recent Peer Releases</h2>
+                <div class="scroll-indicator-text">Scroll Horizontally →</div>
+            </div>
+            <div class="horizontal-scroll-runway">
+                <a href="resources.html" class="scroll-item-card">
+                    <div class="card-top-meta"><span>Review Paper</span><span style="color:var(--brand-indigo)">EN</span></div>
+                    <h3>Neuroplasticity in Adolescents</h3>
+                    <p>Tracking analysis detailing dynamic cortical reorganizations inside secondary student profiles.</p>
+                    <div class="card-contributor-footer">SI-CN-RA-100245 • SI-US-RA-105991</div>
+                </a>
+                <a href="resources.html" class="scroll-item-card">
+                    <div class="card-top-meta"><span>Translation</span><span style="color:var(--brand-indigo)">ES</span></div>
+                    <h3>Synaptic Pruning Summary</h3>
+                    <p>A localized linguistic conversion of developmental synaptic elimination guidelines.</p>
+                    <div class="card-contributor-footer">SI-MX-MT-500147</div>
+                </a>
+                <a href="resources.html" class="scroll-item-card">
+                    <div class="card-top-meta"><span>Animation</span><span style="color:var(--text-muted)">Media</span></div>
+                    <h3>Action Potentials Visualized</h3>
+                    <p>High-fidelity vector rendering models depicting cellular membrane voltage changes.</p>
+                    <div class="card-contributor-footer">SI-GB-MA-300412 • SI-CA-DD-200951</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p>
+    </footer>
+
+</body>
+</html>
