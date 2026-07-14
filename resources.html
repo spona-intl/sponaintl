@@ -3,336 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPONA Intl. | Registry & Resources</title>
-    <style>
-        :root {
-            --bg-main: #fcfcfd;
-            --bg-card: #ffffff;
-            --border-color: #e2e8f0;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --accent-gold: #b45309;
-            --accent-gold-light: #fef3c7;
-            --accent-platinum: #f1f5f9;
-            --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
-            --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.06);
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-primary);
-            line-height: 1.7;
-            background-image: 
-                radial-gradient(circle at 100% 0%, rgba(180, 83, 9, 0.03), transparent 600px),
-                radial-gradient(circle at 0% 100%, rgba(15, 23, 42, 0.02), transparent 600px);
-            background-attachment: fixed;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* High-End Navigation Bar */
-        nav {
-            position: sticky;
-            top: 0;
-            background-color: rgba(252, 252, 253, 0.85);
-            border-bottom: 1px solid var(--border-color);
-            padding: 20px;
-            z-index: 1000;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            transition: var(--transition);
-        }
-
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .nav-logo {
-            font-weight: 700;
-            font-size: 1.15rem;
-            color: var(--text-primary);
-            text-decoration: none;
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-        }
-
-        .nav-logo span {
-            color: var(--accent-gold);
-            font-weight: 300;
-            margin-left: 2px;
-        }
-
-        .nav-right-block {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 4px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 8px 16px;
-            border-radius: 6px;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-            background-color: var(--accent-platinum);
-        }
-
-        .nav-links a.active {
-            color: var(--accent-gold);
-            background-color: var(--accent-gold-light);
-            font-weight: 600;
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        .header-section {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        h2 {
-            font-size: 2.4rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: var(--text-primary);
-            margin-bottom: 14px;
-        }
-
-        .subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Search Section */
-        .search-container {
-            margin-bottom: 45px;
-            position: relative;
-        }
-
-        .search-bar {
-            width: 100%;
-            padding: 18px 24px;
-            font-size: 1rem;
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            outline: none;
-            background-color: var(--bg-card);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        .search-bar:focus {
-            border-color: var(--accent-gold);
-            box-shadow: 0 10px 30px rgba(180, 83, 9, 0.05);
-        }
-
-        /* Resource Premium Cards */
-        .resource-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .resource-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 32px;
-            border-radius: 18px;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .resource-card:hover {
-            transform: translateY(-3px);
-            border-color: #cbd5e1;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .resource-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 20px;
-        }
-
-        .resource-link {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-            letter-spacing: -0.5px;
-            line-height: 1.4;
-            transition: var(--transition);
-        }
-
-        .resource-card:hover .resource-link {
-            color: var(--accent-gold);
-        }
-
-        .badge {
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            padding: 6px 14px;
-            border-radius: 30px;
-            background-color: var(--accent-platinum);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-            white-space: nowrap;
-        }
-
-        .resource-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* External Read Link Action */
-        .read-action {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--accent-gold);
-            text-decoration: none;
-            margin-top: 4px;
-            transition: var(--transition);
-        }
-
-        .read-action:hover {
-            opacity: 0.8;
-        }
-
-        /* Token Sub-containers */
-        .uid-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            padding-top: 4px;
-            border-top: 1px dashed var(--border-color);
-        }
-
-        .uid-token {
-            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            background-color: var(--accent-platinum);
-            padding: 4px 10px;
-            border-radius: 6px;
-        }
-
-        /* Filter Fallbacks */
-        .no-results {
-            display: none;
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            border: 1px dashed var(--border-color);
-            border-radius: 18px;
-            background-color: var(--bg-card);
-        }
-
-        /* Footer Layout */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            margin-top: 100px;
-            letter-spacing: 0.3px;
-        }
-
-        footer a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 600;
-            border-bottom: 1px solid var(--text-primary);
-            transition: var(--transition);
-        }
-
-        footer a:hover {
-            color: var(--accent-gold);
-            border-color: var(--accent-gold);
-        }
-
-        #google_translate_element {
-            min-width: 140px;
-        }
-    </style>
+    <title>SPONA Intl. | Resources</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">SPONA<span>Intl.</span></a>
-            <div class="nav-right-block">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="resources.html" class="active">Resources</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div id="google_translate_element"></div>
-            </div>
+            <a href="index.html" class="nav-logo">SPONA <span>Intl.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
-    <div class="container">
-        <section class="header-section">
-            <h2>Academic Registry & Resources</h2>
-            <p class="subtitle">Explore an open-access repository of cross-border student articles, localized reviews, and interactive digital models.</p>
-        </section>
-
-        <div class="search-container">
-            <input type="text" id="resourceSearch" class="search-bar" placeholder="Search registry by topic, role abbreviation, or student UID...">
+    <main class="container" style="max-width: 850px;">
+        <div class="hero-wrapper" style="text-align: left;">
+            <div class="status-pill">Registry Records</div>
+            <h1 style="text-align: left; margin: 0 0 16px 0;">Academic Mini-Projects</h1>
+            <p style="text-align: left;">Browse our repository of peer-reviewed summaries, video animations, and multilingual research translations.</p>
         </div>
 
-        <div id="noResultsMessage" class="no-results">No registry listings match your search criteria.</div>
+        <input type="text" id="resourceSearch" class="search-bar" placeholder="Search by topic, keyword, or student UID...">
 
-        <ul class="resource-list" id="resourceRegistry">
-            
-            <!-- Resource Item 1 -->
+        <div id="resourceRegistry">
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="list-item-card" data-search="neuroplasticity adolescents research summary paper ra cn us">
+                <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-indigo)">
+                    <span>REVIEW PAPER</span><span>SI-CN-RA-100245 • SI-US-RA-105991</span>
+                </div>
+                <h3>"Neuroplasticity in Adolescents" Research Summary</h3>
+                <p>A comprehensive tracking analysis detailing cortical reorganizations inside the secondary student demographic profile.</p>
+            </a>
+
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="list-item-card" data-search="synaptic pruning summary spanish translation edition mt mx">
+                <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-indigo)">
+                    <span>TRANSLATION (ES)</span><span>SI-MX-MT-500147</span>
+                </div>
+                <h3>"Synaptic Pruning Summary" (Spanish Translation)</h3>
+                <p>A localized linguistic conversion of developmental synaptic elimination guidelines for cross-border global chapters.</p>
+            </a>
+
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="list-item-card" data-search="action potentials visualized animations media animator ma dd gb ca">
+                <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-indigo)">
+                    <span>VIDEO ANIMATION</span><span>SI-GB-MA-300412 • SI-CA-DD-200951</span>
+                </div>
+                <h3>"Action Potentials Visualized" Video Animation</h3>
+                <p>A sequence of high-fidelity vector rendering models depicting cellular membrane voltage changes during neural firings.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 SPONA Intl. All rights reserved. An International Student-Led Academic Association.</p>
+    </footer>
+
+    <script>
+        document.getElementById('resourceSearch').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.list-item-card');
+            cards.forEach(card => {
+                const text = card.getAttribute('data-search') + card.querySelector('h3').textContent.toLowerCase();
+                card.style.display = text.includes(query) ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
