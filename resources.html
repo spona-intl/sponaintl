@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPONA Intl. | Resources</title>
+    <title>SPONA Intl. | Registry & Resources</title>
     <style>
         :root {
-            --bg-main: #f8fafc;
-            --bg-glass: rgba(255, 255, 255, 0.75);
+            --bg-main: #fcfcfd;
             --bg-card: #ffffff;
-            --border-color: rgba(148, 163, 184, 0.12);
-            --border-hover: rgba(99, 102, 241, 0.25);
+            --border-color: #e2e8f0;
             --text-primary: #0f172a;
-            --text-secondary: #64748b;
-            --accent-indigo: #4f46e5;
-            --accent-indigo-light: rgba(79, 70, 229, 0.08);
-            --accent-emerald: #059669;
-            --accent-emerald-light: rgba(5, 150, 105, 0.08);
-            --shadow-sm: 0 4px 20px rgba(148, 163, 184, 0.05);
-            --shadow-md: 0 16px 40px rgba(79, 70, 229, 0.06);
-            --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --text-secondary: #475569;
+            --accent-gold: #b45309;
+            --accent-gold-light: #fef3c7;
+            --accent-platinum: #f1f5f9;
+            --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+            --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.06);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -29,97 +26,99 @@
         }
 
         body {
-            font-family: var(--font-display);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-main);
             color: var(--text-primary);
-            line-height: 1.6;
+            line-height: 1.7;
             background-image: 
-                radial-gradient(circle at 100% 0%, rgba(79, 70, 229, 0.04), transparent 600px),
-                radial-gradient(circle at 0% 100%, rgba(5, 150, 105, 0.03), transparent 600px);
+                radial-gradient(circle at 100% 0%, rgba(180, 83, 9, 0.03), transparent 600px),
+                radial-gradient(circle at 0% 100%, rgba(15, 23, 42, 0.02), transparent 600px);
             background-attachment: fixed;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* High-End Glassmorphic Navigation */
+        /* High-End Navigation Bar */
         nav {
             position: sticky;
             top: 0;
-            background-color: var(--bg-glass);
+            background-color: rgba(252, 252, 253, 0.85);
             border-bottom: 1px solid var(--border-color);
             padding: 20px;
             z-index: 1000;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
+            transition: var(--transition);
         }
 
         .nav-container {
-            max-width: 1050px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
             gap: 20px;
         }
 
         .nav-logo {
-            font-weight: 800;
-            font-size: 1.25rem;
+            font-weight: 700;
+            font-size: 1.15rem;
             color: var(--text-primary);
             text-decoration: none;
             letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
+            text-transform: uppercase;
         }
 
         .nav-logo span {
-            color: var(--accent-indigo);
-            font-weight: 400;
+            color: var(--accent-gold);
+            font-weight: 300;
             margin-left: 2px;
         }
 
         .nav-right-block {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 30px;
         }
 
         .nav-links {
             display: flex;
-            gap: 6px;
+            gap: 4px;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-secondary);
-            font-weight: 600;
-            font-size: 0.88rem;
-            padding: 10px 18px;
-            border-radius: 12px;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: var(--transition);
         }
 
         .nav-links a:hover {
             color: var(--text-primary);
-            background-color: rgba(148, 163, 184, 0.08);
+            background-color: var(--accent-platinum);
         }
 
         .nav-links a.active {
-            color: var(--accent-indigo);
-            background-color: var(--accent-indigo-light);
+            color: var(--accent-gold);
+            background-color: var(--accent-gold-light);
+            font-weight: 600;
         }
 
-        /* Main Container layout */
+        /* Main Container */
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 80px 24px;
+            padding: 80px 20px;
         }
 
         .header-section {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         h2 {
@@ -127,186 +126,185 @@
             font-weight: 800;
             letter-spacing: -1px;
             color: var(--text-primary);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .subtitle {
             color: var(--text-secondary);
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        /* Search Architecture */
+        /* Search Section */
         .search-container {
-            margin-bottom: 40px;
+            margin-bottom: 45px;
             position: relative;
         }
 
         .search-bar {
             width: 100%;
             padding: 18px 24px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-primary);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
+            border-radius: 14px;
             outline: none;
             background-color: var(--bg-card);
             box-shadow: var(--shadow-sm);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-family: inherit;
+            transition: var(--transition);
         }
 
         .search-bar:focus {
-            border-color: var(--accent-indigo);
-            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.08);
-            transform: translateY(-1px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(180, 83, 9, 0.05);
         }
 
-        .search-bar::placeholder {
-            color: var(--text-secondary);
-            opacity: 0.7;
-        }
-
-        /* Resource Grid & Registry Cards */
+        /* Resource Premium Cards */
         .resource-list {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 24px;
         }
 
         .resource-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             padding: 32px;
-            border-radius: 20px;
+            border-radius: 18px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
             display: flex;
             flex-direction: column;
-            gap: 14px;
-            box-shadow: var(--shadow-sm);
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 16px;
         }
 
         .resource-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--border-hover);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+            border-color: #cbd5e1;
+            box-shadow: var(--shadow-lg);
         }
 
         .resource-top {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 20px;
         }
 
         .resource-link {
-            font-weight: 750;
-            color: var(--text-primary);
             font-size: 1.25rem;
-            letter-spacing: -0.3px;
-            transition: color 0.2s ease;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            line-height: 1.4;
+            transition: var(--transition);
         }
 
         .resource-card:hover .resource-link {
-            color: var(--accent-indigo);
+            color: var(--accent-gold);
         }
 
         .badge {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 700;
-            padding: 6px 14px;
-            border-radius: 20px;
-            background-color: var(--accent-emerald-light);
-            color: var(--accent-emerald);
-            letter-spacing: 0.5px;
             text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 6px 14px;
+            border-radius: 30px;
+            background-color: var(--accent-platinum);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            white-space: nowrap;
         }
 
         .resource-card p {
             color: var(--text-secondary);
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             line-height: 1.6;
         }
 
-        /* Token Layouts */
+        /* External Read Link Action */
+        .read-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+            margin-top: 4px;
+            transition: var(--transition);
+        }
+
+        .read-action:hover {
+            opacity: 0.8;
+        }
+
+        /* Token Sub-containers */
         .uid-container {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-top: 4px;
-            border-top: 1px solid rgba(148, 163, 184, 0.08);
-            padding-top: 16px;
+            padding-top: 4px;
+            border-top: 1px dashed var(--border-color);
         }
 
         .uid-token {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            font-size: 0.78rem;
-            font-weight: 600;
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.75rem;
+            font-weight: 500;
             color: var(--text-secondary);
-            background-color: rgba(148, 163, 184, 0.06);
-            padding: 5px 12px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            letter-spacing: 0.2px;
+            background-color: var(--accent-platinum);
+            padding: 4px 10px;
+            border-radius: 6px;
         }
 
+        /* Filter Fallbacks */
         .no-results {
             display: none;
             text-align: center;
-            padding: 60px 24px;
+            padding: 60px 20px;
             color: var(--text-secondary);
             font-size: 0.95rem;
             border: 1px dashed var(--border-color);
-            border-radius: 20px;
+            border-radius: 18px;
             background-color: var(--bg-card);
-            box-shadow: var(--shadow-sm);
         }
 
-        /* Premium Minimalist Footer */
+        /* Footer Layout */
         footer {
             text-align: center;
-            padding: 48px 24px;
+            padding: 40px 20px;
             border-top: 1px solid var(--border-color);
             color: var(--text-secondary);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             margin-top: 100px;
-            background-color: #ffffff;
+            letter-spacing: 0.3px;
         }
 
         footer a {
-            color: var(--accent-indigo);
+            color: var(--text-primary);
             text-decoration: none;
             font-weight: 600;
-            transition: opacity 0.2s ease;
+            border-bottom: 1px solid var(--text-primary);
+            transition: var(--transition);
         }
 
         footer a:hover {
-            opacity: 0.8;
-            text-decoration: underline;
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
         }
 
-        /* Google Translate Structural Overrides */
         #google_translate_element {
-            display: inline-block;
-        }
-        .goog-te-gadget-simple {
-            background-color: transparent !important;
-            border: 1px solid var(--border-color) !important;
-            padding: 6px 12px !important;
-            border-radius: 10px !important;
-            font-family: inherit !important;
-            font-size: 0.82rem !important;
+            min-width: 140px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Sticky Navigation Block -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="nav-logo">SPONA<span>Intl.</span></a>
@@ -323,12 +321,18 @@
         </div>
     </nav>
 
-    <!-- Main Entry Container -->
     <div class="container">
-        <header class="header-section">
-            <h2>Resources & Mini-Projects</h2>
-            <p class="subtitle">Browse our unified registry of peer-led review summaries, structural data models, and localized medical translations.</p>
-        </header>
+        <section class="header-section">
+            <h2>Academic Registry & Resources</h2>
+            <p class="subtitle">Explore an open-access repository of cross-border student articles, localized reviews, and interactive digital models.</p>
+        </section>
 
-        <!-- Live Registry Search System -->
         <div class="search-container">
+            <input type="text" id="resourceSearch" class="search-bar" placeholder="Search registry by topic, role abbreviation, or student UID...">
+        </div>
+
+        <div id="noResultsMessage" class="no-results">No registry listings match your search criteria.</div>
+
+        <ul class="resource-list" id="resourceRegistry">
+            
+            <!-- Resource Item 1 -->
