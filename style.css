@@ -1,367 +1,375 @@
 :root {
-    --bg-main: #fcfcfd;
-    --bg-card: #ffffff;
-    --border-subtle: #e2e8f0;
-    --text-display: #0f172a;
-    --text-muted: #64748b;
-    --brand-dark: #1e293b;
-    --brand-accent-bg: #f8fafc;
-    --brand-accent-text: #334155;
-    --brand-accent-border: #cbd5e1;
+  --bg-main: #fcfcfd;
+  --bg-card: #ffffff;
+  --border-subtle: #e2e8f0;
+  --text-display: #0f172a;
+  --text-muted: #64748b;
+  --brand-dark: #1e293b;
+  --brand-accent-bg: #f8fafc;
+  --brand-accent-text: #334155;
+  --brand-accent-border: #cbd5e1;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-display);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-display);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* 🧭 Navigation Header Structure */
 nav {
-    position: sticky;
-    top: 0;
-    background-color: rgba(252, 252, 253, 0.9);
-    border-bottom: 1px solid var(--border-subtle);
-    padding: 20px 40px;
-    z-index: 1000;
-    backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  background-color: rgba(252, 252, 253, 0.9);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 20px 40px;
+  z-index: 1000;
+  backdrop-filter: blur(20px);
 }
 
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-logo {
-    font-family: "Times New Roman", Georgia, serif;
-    font-weight: 800;
-    font-size: 1.6rem;
-    color: #000000;
-    text-decoration: none;
-    letter-spacing: -0.5px;
+  font-family: "Times New Roman", Georgia, serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #000000;
+  text-decoration: none;
+  letter-spacing: -0.5px;
 }
 
 .nav-logo span {
-    color: var(--brand-dark);
-    font-weight: 500;
+  color: var(--brand-dark);
+  font-weight: 500;
 }
 
 .nav-links {
-    display: flex;
-    gap: 8px;
-    list-style: none;
-    align-items: center;
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  align-items: center;
 }
 
 /* Pill-Style Links */
 .nav-links a {
-    text-decoration: none;
-    color: #475569;
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
 }
 
 .nav-links a:hover {
-    color: #0f172a;
-    background-color: #f8fafc;
+  color: #0f172a;
+  background-color: #f8fafc;
 }
 
 .nav-links a.active {
-    color: #0f172a;
-    background-color: var(--brand-accent-bg);
-    border-color: var(--brand-accent-border);
+  color: #0f172a;
+  background-color: var(--brand-accent-bg);
+  border-color: var(--brand-accent-border);
 }
 
 /* 🏛️ Layout Framing */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 20px 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 40px 20px;
 }
 
 .hero-wrapper {
-    text-align: center;
-    margin-bottom: 60px;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .hero-wrapper h1 {
-    font-family: "Times New Roman", Georgia, serif;
-    font-size: 3.5rem;
-    font-weight: 400;
-    line-height: 1.2;
-    color: var(--text-display);
-    max-width: 900px;
-    margin: 0 auto 24px auto;
-    letter-spacing: -0.5px;
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-display);
+  max-width: 900px;
+  margin: 0 auto 24px auto;
+  letter-spacing: -0.5px;
 }
 
 .hero-wrapper p {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    max-width: 700px;
-    margin: 0 auto;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .status-pill {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--brand-accent-text);
-    background-color: var(--brand-accent-bg);
-    border: 1px solid var(--brand-accent-border);
-    padding: 6px 14px;
-    border-radius: 4px;
-    margin-bottom: 24px;
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--brand-accent-text);
+  background-color: var(--brand-accent-bg);
+  border: 1px solid var(--brand-accent-border);
+  padding: 6px 14px;
+  border-radius: 4px;
+  margin-bottom: 24px;
 }
 
 .editorial-card {
-    max-width: 850px;
-    margin: 40px auto;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    padding: 60px 50px;
-    text-align: center;
+  max-width: 850px;
+  margin: 40px auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 60px 50px;
+  text-align: center;
 }
 
 .action-btn {
-    display: inline-block;
-    background-color: var(--text-display);
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 14px 32px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
+  display: inline-block;
+  background-color: var(--text-display);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 14px 32px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
 }
 
 .action-btn:hover {
-    background-color: #334155;
+  background-color: #334155;
 }
 
 /* 🎞️ Horizontal Scrolling Display Grid */
 .publication-runway-section {
-    margin-top: 80px;
+  margin-top: 80px;
 }
 
 .section-meta-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 24px;
-    border-bottom: 1px solid var(--border-subtle);
-    padding-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 16px;
 }
 
 .section-meta-header h2 {
-    font-family: "Times New Roman", Georgia, serif;
-    font-size: 1.8rem;
-    font-weight: 400;
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 400;
 }
 
 .scroll-indicator-text {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
 }
 
 .horizontal-scroll-runway {
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    padding: 4px 4px 24px 4px;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 4px 4px 24px 4px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 .horizontal-scroll-runway::-webkit-scrollbar {
-    height: 3px;
+  height: 3px;
 }
 
 .horizontal-scroll-runway::-webkit-scrollbar-thumb {
-    background: var(--border-subtle);
-    border-radius: 2px;
+  background: var(--border-subtle);
+  border-radius: 2px;
 }
 
 .scroll-item-card {
-    flex: 0 0 340px;
-    scroll-snap-align: start;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    padding: 32px 28px;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.25s ease;
+  flex: 0 0 340px;
+  scroll-snap-align: start;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
 }
 
 .scroll-item-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--text-display);
+  transform: translateY(-4px);
+  border-color: var(--text-display);
 }
 
 .scroll-item-card h3 {
-    font-family: "Times New Roman", Georgia, serif;
-    font-size: 1.3rem;
-    font-weight: 400;
-    margin: 16px 0 8px 0;
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 16px 0 8px 0;
 }
 
 .scroll-item-card p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
 }
 
 .card-top-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 .card-contributor-footer {
-    font-family: monospace;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-top: auto;
-    border-top: 1px dashed var(--border-subtle);
-    padding-top: 12px;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: auto;
+  border-top: 1px dashed var(--border-subtle);
+  padding-top: 12px;
 }
 
 .editorial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 32px;
-    margin: 40px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin: 40px 0;
 }
 
 .grid-block {
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    padding: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 40px;
 }
 
 .grid-block h3 {
-    font-family: "Times New Roman", Georgia, serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 12px;
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 12px;
 }
 
 .grid-block p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 .search-bar {
-    width: 100%;
-    padding: 16px 20px;
-    font-size: 1rem;
-    border: 1px solid var(--border-subtle);
-    outline: none;
-    margin-bottom: 40px;
-    background-color: var(--bg-card);
-    transition: border-color 0.2s ease;
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 1rem;
+  border: 1px solid var(--border-subtle);
+  outline: none;
+  margin-bottom: 40px;
+  background-color: var(--bg-card);
+  transition: border-color 0.2s ease;
 }
 
 .search-bar:focus {
-    border-color: var(--text-display);
+  border-color: var(--text-display);
 }
 
 .list-item-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    padding: 32px;
-    margin-bottom: 20px;
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.2s ease;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 32px;
+  margin-bottom: 20px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
 }
 
 .list-item-card:hover {
-    border-color: var(--text-display);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.01);
+  border-color: var(--text-display);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.01);
 }
 
 .list-item-card h3 {
-    font-family: "Times New Roman", Georgia, serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--text-display);
-    margin-bottom: 8px;
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-display);
+  margin-bottom: 8px;
 }
 
 .disclaimer-text {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-style: italic;
-    margin-top: 30px;
-    line-height: 1.5;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 30px;
+  line-height: 1.5;
 }
 
 footer {
-    text-align: center;
-    padding: 60px 0 40px 0;
-    border-top: 1px solid var(--border-subtle);
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    margin-top: 80px;
+  text-align: center;
+  padding: 60px 0 40px 0;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 80px;
 }
 
-/* Mobile Navigation Optimization */
-@media (max-width: 600px) {
-    .nav-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 12px 16px;
-        gap: 8px;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding-bottom: 6px;
-        
-        /* Smooth scrolling physics for mobile touch tracks */
-        -webkit-overflow-scrolling: touch; 
-        
-        /* Optional: Hides standard scrollbar track for a cleaner aesthetic */
-        scrollbar-width: none; /* Firefox */
-    }
-
-    .nav-links::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
-    }
-
-    .nav-links li {
-        display: inline-block;
-        margin-right: 20px; /* Space out the scrollable items */
-    }
+/* 📱 Responsive Mobile Navigation Framework Patch */
+@media (max-width: 680px) {
+  nav {
+    padding: 16px;
+  }
+  
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    width: 100%;
+  }
+  
+  .nav-links {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    justify-content: flex-start;
+    gap: 4px;
+    
+    /* Invisible layout metric paths */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  
+  .nav-links::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera webkit engine bypass */
+  }
+  
+  .nav-links li {
+    scroll-snap-align: start;
+    display: inline-block;
+  }
+  
+  .nav-links a {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
 }
