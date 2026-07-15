@@ -113,7 +113,7 @@ const currentDate = today.getUTCDate();
 const statusPill = document.getElementById('live-status-pill');
 const activeWindow = document.getElementById('application-active-window');
 const closedWindow = document.getElementById('application-closed-window');
-if (TESTING_MODE || (currentMonth === 7 && currentDate <= 25)) {
+if (TESTING_MODE || (currentMonth === 7 && currentDate <= 15)) {
 statusPill.textContent = "Admissions Active";
 statusPill.style.background = "#f0fdf4";
 statusPill.style.color = "#16a34a";
