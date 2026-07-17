@@ -70,7 +70,7 @@ To announce an upcoming workshop, regional study group, or global meeting, copy 
 <!-- START NEW EVENT SCHEDULE CARD -->
 <div class="list-item-card" style="border-left: 3px solid var(--text-display);">
   <div style="margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-accent-text)">[STATUS - e.g., UPCOMING SEMINAR / WORKSHOP]</div>
-  <h3>[Event Title Title]</h3>
+  <h3>[Event Title]</h3>
   <p style="margin-bottom: 16px;"><strong>Timeline Schedule:</strong> [Month Day, Year @ Time UTC]</p>
   <p style="margin-bottom: 24px;">[Brief 1-2 sentence overview of what core analysts, translators, or team branches will present during the live call.]</p>
   <a href="INSERT_REGISTRATION_OR_STREAM_LINK" target="_blank" rel="noopener noreferrer" class="action-btn" style="padding: 10px 24px; font-size: 0.85rem;">[Button Text - e.g., Access Digital Assembly]</a>
