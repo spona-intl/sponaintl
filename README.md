@@ -45,50 +45,36 @@ To feature a newly released project on the home page runway, copy the template b
 <!-- END NEW RUNWAY CARD -->
 ```
 
+### 2. Adding Clickable & Searchable Posts to the Resources Registry (resources.html)
+When adding student review papers, posters, animations, or translated works, append a new clickable card block inside the `<div id="resourceRegistry">` container.
+
+> ⚠️ **Critical Requirement:** You must add lowercase searchable terms, keywords, roles, country codes, dates, and UIDs into the card's `data-search` attribute. If this metadata is omitted, the live client-side page search filtering engine will fail to index the item.
+
+```html
+<!-- START NEW RESOURCES REGISTRY CARD -->
+<a href="INSERT_TARGET_PAGE.html" class="list-item-card" data-search="insert lowercase searchable topic keywords role-abbreviations country-codes uids month date year here">
+  <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-accent-text)">
+    <span>[PROJECT TYPE - e.g., REVIEW PAPER / VIDEO ANIMATION] • [MONTH DAY, YEAR]</span>
+    <span>SI-XX-XX-XXXXXX • SI-XX-XX-XXXXXX</span>
+  </div>
+  <h3>"[Title of the Project/Resource]"</h3>
+  <p>A brief 1-2 sentence description detailing the metrics, scope, or clinical data explored in this cohort mini-project.</p>
+</a>
+<!-- END NEW RESOURCES REGISTRY CARD -->
+```
+
 * **Live Reference Example:**
 ```html
-<a href="topic-neuroplasticity.html" class="scroll-item-card">
-  <div class="card-top-meta"><span>Review Paper</span><span style="color:var(--text-muted)">July 12, 2026</span></div>
-  <h3>Neuroplasticity in Adolescents</h3>
-  <p>Tracking analysis detailing dynamic cortical reorganizations inside secondary student profiles.</p>
-  <div class="card-contributor-footer">SI-CN-RA-100245 • SI-US-RA-105991</div>
+<a href="topic-neuroplasticity.html" class="list-item-card" data-search="neuroplasticity adolescents research summary paper ra cn us si-cn-ra-100245 si-us-ra-105991 july 12 2026">
+  <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-accent-text)">
+    <span>REVIEW PAPER • JULY 12, 2026</span><span>SI-CN-RA-100245 • SI-US-RA-105991</span>
+  </div>
+  <h3>"Neuroplasticity in Adolescents" Research Summary</h3>
+  <p>A comprehensive tracking analysis detailing cortical reorganizations inside the secondary student demographic profile.</p>
 </a>
 ```
 
-### 2. Adding Recent Mini-Project Posts (Resources Collection)
-When adding student review papers, posters, animations, or translated works, append a new list item inside the `<ul class="resource-list" id="resourceRegistry">` container in `resources.html`.
-
-> ⚠️ **Critical Requirement:** You must copy all lowercase metadata strings, role codes, and structural tags inside the card's `data-search` attribute. If this is omitted, the live page search indexing filter will not pick up the item.
-
-```html
-<li class="resource-card" data-search="insert lowercase searchable terms keywords roles tags and uids here">
-  <div class="resource-top">
-    <a href="INSERT_LINK_HERE" target="_blank" rel="noopener noreferrer" class="resource-link">"Title of the Project/Resource"</a>
-    <span class="badge">[ROLE ABBREVIATION - e.g., RA]</span>
-  </div>
-  <p>A brief 1-2 sentence description detailing the metrics, scope, or clinical data explored in this cohort mini-project.</p>
-  <div class="uid-container">
-    <span class="uid-token">SI-XX-XX-XXXXXX</span>
-  </div>
-</li>
-```
-
-* **Live Example (Animation with searchable attributes & UIDs):**
-```html
-<li class="resource-card" data-search="action potentials visualized video animations media animator ma dd digital designer si-gb-ma-300412 si-ca-dd-200951">
-  <div class="resource-top">
-    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="resource-link">"Action Potentials Visualized" Video Animation</a>
-    <span class="badge">MA (Media Animator)</span>
-  </div>
-  <p>A sequence of high-fidelity vector rendering models depicting cellular membrane voltage changes during neural firings.</p>
-  <div class="uid-container">
-    <span class="uid-token">SI-GB-MA-300412</span>
-    <span class="uid-token">SI-CA-DD-200951</span>
-  </div>
-</li>
-```
-
-### 3. Adding New Events to the Schedule
+### 3. Adding New Events to the Schedule (events.html)
 To announce an upcoming workshop, regional study group, or global meeting, copy and paste this standard card block inside the main `<div class="container">` component of `events.html`:
 
 ```html
