@@ -63,29 +63,29 @@ When adding student review papers, posters, animations, or translated works, app
 <!-- END NEW RESOURCES REGISTRY CARD -->
 ```
 
-* **Live Reference Example:**
+### 3. Adding New Events with Clickable Buttons (events.html)
+To announce an upcoming workshop, regional study group, or global meeting, copy and paste this standard card block inside the main `<main class="container">` component of `events.html`:
+
 ```html
-<a href="topic-neuroplasticity.html" class="list-item-card" data-search="neuroplasticity adolescents research summary paper ra cn us si-cn-ra-100245 si-us-ra-105991 july 12 2026">
-  <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-accent-text)">
-    <span>REVIEW PAPER • JULY 12, 2026</span><span>SI-CN-RA-100245 • SI-US-RA-105991</span>
-  </div>
-  <h3>"Neuroplasticity in Adolescents" Research Summary</h3>
-  <p>A comprehensive tracking analysis detailing cortical reorganizations inside the secondary student demographic profile.</p>
-</a>
+<!-- START NEW EVENT SCHEDULE CARD -->
+<div class="list-item-card" style="border-left: 3px solid var(--text-display);">
+  <div style="margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-accent-text)">[STATUS - e.g., UPCOMING SEMINAR / WORKSHOP]</div>
+  <h3>[Event Title Title]</h3>
+  <p style="margin-bottom: 16px;"><strong>Timeline Schedule:</strong> [Month Day, Year @ Time UTC]</p>
+  <p style="margin-bottom: 24px;">[Brief 1-2 sentence overview of what core analysts, translators, or team branches will present during the live call.]</p>
+  <a href="INSERT_REGISTRATION_OR_STREAM_LINK" target="_blank" rel="noopener noreferrer" class="action-btn" style="padding: 10px 24px; font-size: 0.85rem;">[Button Text - e.g., Access Digital Assembly]</a>
+</div>
+<!-- END NEW EVENT SCHEDULE CARD -->
 ```
 
-### 3. Adding New Events to the Schedule (events.html)
-To announce an upcoming workshop, regional study group, or global meeting, copy and paste this standard card block inside the main `<div class="container">` component of `events.html`:
-
+* **Live Reference Example:**
 ```html
-<div class="card" style="border-left: 4px solid var(--accent-indigo);">
-  <span class="badge" style="margin-bottom: 16px; display: inline-block;">Upcoming Event</span>
-  <h3>[Event Title]</h3>
-  <p><strong>Timeline Schedule:</strong> [Month Day, Year @ Time UTC]</p>
-  <p>[Brief 1-2 sentence overview of what core analysts, translators, or team branches will present.]</p>
-  <p style="margin-top: 15px; margin-bottom: 0;">
-    <a href="INSERT_REGISTRATION_OR_STREAM_LINK" target="_blank" rel="noopener noreferrer" style="color: var(--accent-indigo); text-decoration: none; font-weight: 700;">👉 Access Event Here</a>
-  </p>
+<div class="list-item-card" style="border-left: 3px solid var(--text-display);">
+  <div style="margin-bottom:12px; font-size:0.8rem; font-weight:700; color:var(--brand-accent-text)">UPCOMING SEMINAR</div>
+  <h3>Global Youth Neuroscience Seminar 2026</h3>
+  <p style="margin-bottom: 16px;"><strong>Timeline Schedule:</strong> October 14, 2026 @ 15:00 UTC</p>
+  <p style="margin-bottom: 24px;">An international digital assembly where core research analysts and team branches share dynamic updates regarding ongoing collaborative modules.</p>
+  <a href="https://zoom.us" target="_blank" rel="noopener noreferrer" class="action-btn" style="padding: 10px 24px; font-size: 0.85rem;">Access Digital Assembly</a>
 </div>
 ```
 
